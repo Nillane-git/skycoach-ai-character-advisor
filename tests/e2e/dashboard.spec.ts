@@ -14,21 +14,13 @@ test.describe("demo dashboard", () => {
       page.getByRole("heading", { name: /skycoach/i }).first(),
     ).toBeVisible();
 
-    // Character score: a 0-100 integer rendered by the score dial.
-    const scoreText = await page
-      .getByTestId("character-score-value")
-      .first()
-      .textContent()
-      .catch(() => null);
-    if (scoreText !== null) {
-      const score = Number(scoreText.replace(/[^0-9]/g, ""));
-      expect(Number.isInteger(score)).toBe(true);
-      expect(score).toBeGreaterThanOrEqual(0);
-      expect(score).toBeLessThanOrEqual(100);
-    } else {
-      // Fallback: the dashboard must still surface a numeric score somewhere.
-      await expect(page.getByText(/\b\d{1,3}\b/).first()).toBeVisible();
-    }
+    // Character score: a 0-100 integer rendered by the score panel.
+    const scoreEl = page.getByTestId("character-score-value").first();
+    await expect(scoreEl).toBeVisible();
+    const score = Number(((await scoreEl.textContent()) ?? "").replace(/[^0-9]/g, ""));
+    expect(Number.isInteger(score)).toBe(true);
+    expect(score).toBeGreaterThanOrEqual(0);
+    expect(score).toBeLessThanOrEqual(100);
 
     // The remaining seven analysis section headings.
     const sectionHeadings = [

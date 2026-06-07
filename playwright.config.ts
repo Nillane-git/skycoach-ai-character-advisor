@@ -5,6 +5,10 @@ const BASE_URL = `http://localhost:${PORT}`;
 
 export default defineConfig({
   testDir: "tests/e2e",
+  // Generous per-test timeout: the dev server compiles the dynamic route on the
+  // first navigation, which can take longer than the 30s default on a cold boot.
+  timeout: 60000,
+  expect: { timeout: 10000 },
   use: {
     baseURL: BASE_URL,
   },

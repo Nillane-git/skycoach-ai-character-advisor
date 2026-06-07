@@ -27,7 +27,7 @@ export function CharacterScore({ score }: { score: number }) {
           Overall character score
         </p>
         <p className="mt-1 text-3xl font-semibold tracking-tight text-white">
-          {score}
+          <span data-testid="character-score-value">{score}</span>
           <span className="text-base font-normal text-white/40"> / 100</span>
         </p>
         <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/60">
