@@ -1,0 +1,62 @@
+{
+  "name": "Freshdinger",
+  "race": "Human",
+  "class": "Paladin",
+  "active_spec_name": "Retribution",
+  "active_spec_role": "Dps",
+  "gender": "male",
+  "faction": "alliance",
+  "achievement_points": 1640,
+  "thumbnail_url": "https://render.worldofwarcraft.com/us/character/demo/22/204110358-avatar.jpg",
+  "region": "us",
+  "realm": "Demo",
+  "last_crawled_at": "2026-06-07T08:05:00.000Z",
+  "profile_url": "https://raider.io/characters/us/demo/Freshdinger",
+  "profile_banner": "hordebanner1",
+  "gear": {
+    "updated_at": "2026-06-07T08:05:00.000Z",
+    "item_level_equipped": 590,
+    "item_level_total": 591,
+    "artifact_traits": 0
+  },
+  "mythic_plus_scores_by_season": [
+    {
+      "season": "season-tww-3",
+      "scores": {
+        "all": 0,
+        "dps": 0,
+        "healer": 0,
+        "tank": 0,
+        "spec_0": 0,
+        "spec_1": 0,
+        "spec_2": 0,
+        "spec_3": 0
+      },
+      "segments": {
+        "all": { "score": 0, "color": "#ffffff" },
+        "dps": { "score": 0, "color": "#ffffff" },
+        "healer": { "score": 0, "color": "#ffffff" },
+        "tank": { "score": 0, "color": "#ffffff" }
+      }
+    }
+  ],
+  "mythic_plus_best_runs": [],
+  "raid_progression": {
+    "nerubar-palace": {
+      "summary": "",
+      "total_bosses": 8,
+      "normal_bosses_killed": 0,
+      "heroic_bosses_killed": 0,
+      "mythic_bosses_killed": 0,
+      "expansion_id": 10
+    },
+    "current-raid-tier": {
+      "summary": "",
+      "total_bosses": 8,
+      "normal_bosses_killed": 0,
+      "heroic_bosses_killed": 0,
+      "mythic_bosses_killed": 0,
+      "expansion_id": 11
+    }
+  }
+}

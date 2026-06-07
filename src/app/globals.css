@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Dark premium palette (force dark — no light mode). */
+:root {
+  --background: #0b0d10;
+  --foreground: #e7eaf0;
+  --card: #14171c;
+  --card-foreground: #e7eaf0;
+  --muted: #1b1f26;
+  --muted-foreground: #99a2b2;
+  --border: #242a33;
+  --input: #242a33;
+  --ring: #7c8cf8;
+
+  /* Accent — per-dashboard override via style={{ "--accent": classColor(class) }} */
+  --accent: #7c8cf8;
+  --accent-foreground: #0b0d10;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}

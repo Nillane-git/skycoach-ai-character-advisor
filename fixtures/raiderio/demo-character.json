@@ -1,0 +1,175 @@
+{
+  "name": "Skycoach",
+  "race": "Void Elf",
+  "class": "Mage",
+  "active_spec_name": "Frost",
+  "active_spec_role": "Dps",
+  "gender": "male",
+  "faction": "alliance",
+  "achievement_points": 21450,
+  "thumbnail_url": "https://render.worldofwarcraft.com/us/character/demo/192/213827264-avatar.jpg",
+  "region": "us",
+  "realm": "Demo",
+  "last_crawled_at": "2026-06-07T11:42:00.000Z",
+  "profile_url": "https://raider.io/characters/us/demo/Skycoach",
+  "profile_banner": "hordebanner1",
+  "gear": {
+    "updated_at": "2026-06-07T11:42:00.000Z",
+    "item_level_equipped": 635,
+    "item_level_total": 637,
+    "artifact_traits": 0
+  },
+  "mythic_plus_scores_by_season": [
+    {
+      "season": "season-tww-3",
+      "scores": {
+        "all": 2750,
+        "dps": 2750,
+        "healer": 0,
+        "tank": 0,
+        "spec_0": 2750,
+        "spec_1": 0,
+        "spec_2": 0,
+        "spec_3": 0
+      },
+      "segments": {
+        "all": { "score": 2750, "color": "#ff8000" },
+        "dps": { "score": 2750, "color": "#ff8000" },
+        "healer": { "score": 0, "color": "#ffffff" },
+        "tank": { "score": 0, "color": "#ffffff" }
+      }
+    }
+  ],
+  "mythic_plus_best_runs": [
+    {
+      "dungeon": "Ara-Kara, City of Echoes",
+      "short_name": "ARAK",
+      "mythic_level": 14,
+      "completed_at": "2026-06-05T03:11:00.000Z",
+      "clear_time_ms": 1689000,
+      "par_time_ms": 1830000,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 503,
+      "zone_id": 14938,
+      "score": 378.4,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/1-arakara"
+    },
+    {
+      "dungeon": "City of Threads",
+      "short_name": "COT",
+      "mythic_level": 13,
+      "completed_at": "2026-06-03T22:48:00.000Z",
+      "clear_time_ms": 1902000,
+      "par_time_ms": 2040000,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 505,
+      "zone_id": 14882,
+      "score": 360.1,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/2-cityofthreads"
+    },
+    {
+      "dungeon": "The Dawnbreaker",
+      "short_name": "DAWN",
+      "mythic_level": 13,
+      "completed_at": "2026-06-04T01:20:00.000Z",
+      "clear_time_ms": 1755000,
+      "par_time_ms": 1860000,
+      "num_keystone_upgrades": 3,
+      "map_challenge_mode_id": 502,
+      "zone_id": 14971,
+      "score": 366.9,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/3-dawnbreaker"
+    },
+    {
+      "dungeon": "The Stonevault",
+      "short_name": "SV",
+      "mythic_level": 12,
+      "completed_at": "2026-06-02T19:05:00.000Z",
+      "clear_time_ms": 1980000,
+      "par_time_ms": 2100000,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 501,
+      "zone_id": 14883,
+      "score": 343.7,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/4-stonevault"
+    },
+    {
+      "dungeon": "Mists of Tirna Scithe",
+      "short_name": "MIST",
+      "mythic_level": 12,
+      "completed_at": "2026-06-01T20:33:00.000Z",
+      "clear_time_ms": 1611000,
+      "par_time_ms": 1740000,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 375,
+      "zone_id": 12916,
+      "score": 345.2,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/5-mists"
+    },
+    {
+      "dungeon": "The Necrotic Wake",
+      "short_name": "NW",
+      "mythic_level": 12,
+      "completed_at": "2026-05-31T18:14:00.000Z",
+      "clear_time_ms": 1722000,
+      "par_time_ms": 1860000,
+      "num_keystone_upgrades": 2,
+      "map_challenge_mode_id": 376,
+      "zone_id": 12831,
+      "score": 342.0,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/6-necroticwake"
+    },
+    {
+      "dungeon": "Siege of Boralus",
+      "short_name": "SIEGE",
+      "mythic_level": 11,
+      "completed_at": "2026-05-30T16:47:00.000Z",
+      "clear_time_ms": 2010000,
+      "par_time_ms": 2160000,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 353,
+      "zone_id": 9354,
+      "score": 327.5,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/7-siege"
+    },
+    {
+      "dungeon": "Grim Batol",
+      "short_name": "GB",
+      "mythic_level": 11,
+      "completed_at": "2026-05-29T21:02:00.000Z",
+      "clear_time_ms": 2055000,
+      "par_time_ms": 2220000,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 507,
+      "zone_id": 4950,
+      "score": 325.8,
+      "affixes": [],
+      "url": "https://raider.io/mythic-plus-runs/season-tww-3/8-grimbatol"
+    }
+  ],
+  "raid_progression": {
+    "nerubar-palace": {
+      "summary": "8/8 H",
+      "total_bosses": 8,
+      "normal_bosses_killed": 8,
+      "heroic_bosses_killed": 8,
+      "mythic_bosses_killed": 3,
+      "expansion_id": 10
+    },
+    "current-raid-tier": {
+      "summary": "6/8 H",
+      "total_bosses": 8,
+      "normal_bosses_killed": 8,
+      "heroic_bosses_killed": 6,
+      "mythic_bosses_killed": 2,
+      "expansion_id": 11
+    }
+  }
+}

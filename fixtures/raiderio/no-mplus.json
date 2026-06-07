@@ -1,0 +1,62 @@
+{
+  "name": "Casualcleave",
+  "race": "Dwarf",
+  "class": "Warrior",
+  "active_spec_name": "Arms",
+  "active_spec_role": "Dps",
+  "gender": "female",
+  "faction": "alliance",
+  "achievement_points": 12880,
+  "thumbnail_url": "https://render.worldofwarcraft.com/us/character/demo/115/210442355-avatar.jpg",
+  "region": "us",
+  "realm": "Demo",
+  "last_crawled_at": "2026-06-07T10:15:00.000Z",
+  "profile_url": "https://raider.io/characters/us/demo/Casualcleave",
+  "profile_banner": "hordebanner1",
+  "gear": {
+    "updated_at": "2026-06-07T10:15:00.000Z",
+    "item_level_equipped": 620,
+    "item_level_total": 622,
+    "artifact_traits": 0
+  },
+  "mythic_plus_scores_by_season": [
+    {
+      "season": "season-tww-3",
+      "scores": {
+        "all": 0,
+        "dps": 0,
+        "healer": 0,
+        "tank": 0,
+        "spec_0": 0,
+        "spec_1": 0,
+        "spec_2": 0,
+        "spec_3": 0
+      },
+      "segments": {
+        "all": { "score": 0, "color": "#ffffff" },
+        "dps": { "score": 0, "color": "#ffffff" },
+        "healer": { "score": 0, "color": "#ffffff" },
+        "tank": { "score": 0, "color": "#ffffff" }
+      }
+    }
+  ],
+  "mythic_plus_best_runs": [],
+  "raid_progression": {
+    "nerubar-palace": {
+      "summary": "5/8 N",
+      "total_bosses": 8,
+      "normal_bosses_killed": 5,
+      "heroic_bosses_killed": 0,
+      "mythic_bosses_killed": 0,
+      "expansion_id": 10
+    },
+    "current-raid-tier": {
+      "summary": "4/8 H",
+      "total_bosses": 8,
+      "normal_bosses_killed": 8,
+      "heroic_bosses_killed": 4,
+      "mythic_bosses_killed": 0,
+      "expansion_id": 11
+    }
+  }
+}
