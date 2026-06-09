@@ -76,8 +76,9 @@ test.describe("home page", () => {
     await page.getByRole("button", { name: /Осмотреться/i }).click();
     await expect(dialog).toHaveCount(0);
 
-    await expect(page.getByText(/Разбери своего WoW/i).first()).toBeVisible();
-    await expect(page.locator("select").first()).toBeVisible();
+    await expect(page.getByText(/Разбери своего/i).first()).toBeVisible();
+    // Region is a segmented button group (US/EU/KR/TW), not a <select>.
+    await expect(page.getByRole("button", { name: "US" })).toBeVisible();
     await expect(page.locator("input").first()).toBeVisible();
     await expect(
       page.getByRole("button", { name: /Анализировать/i }),
