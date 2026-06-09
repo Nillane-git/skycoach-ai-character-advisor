@@ -1,17 +1,18 @@
 # Isolated SkyCoach deployment — does NOT touch the host VPN stack.
+# Built from the git checkout on the server: `cd deploy && docker compose up -d --build`.
 # - app:   Next.js standalone server (internal :3000, not published)
-# - caddy: TLS-terminating reverse proxy on the host's FREE :443, with fully
-#          automatic Let's Encrypt via TLS-ALPN-01 (host :80 is taken by the
-#          VPN's own nginx, so HTTP-01 is unavailable — ALPN on :443 is used).
+# - caddy: TLS reverse proxy on the host's FREE :443, automatic Let's Encrypt
+#          via TLS-ALPN-01 (host :80 is the VPN's nginx; :443 is free).
 #
-# Own bridge network + own published port (:443) only. X-ray (:2087) and the
-# VPN nginx (:80) are untouched.
+# `name:` pins the Compose project so the caddy_data volume name (and the issued
+# LE certificate inside it) is stable regardless of the working directory.
+name: skycoach-advisor
 
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: .. # repo root
+      dockerfile: deploy/Dockerfile
     image: skycoach-app:latest
     container_name: skycoach_app
     environment:
@@ -35,7 +36,7 @@ services:
       - "443:443/udp" # HTTP/3
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy_data:/data # persists issued certs across restarts (LE rate limits)
+      - caddy_data:/data # persists the LE cert across restarts
       - caddy_config:/config
     restart: unless-stopped
     networks:

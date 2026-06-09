@@ -1,23 +1,20 @@
-# Runtime-only image: copies a PREBUILT Next.js standalone server (built on a
-# beefier host) so the image build does no compilation and needs almost no RAM —
-# important on the small (1.8 GB) VPS this is deployed to.
-#
-# Expected build context layout (assembled by deploy/build-bundle.sh):
-#   ./app/      -> contents of .next/standalone  (server.js, node_modules, .next)
-#   ./static/   -> contents of .next/static
-#   ./public/   -> contents of public
-FROM node:22-alpine
+# Multi-stage build so the server can build straight from a git checkout
+# (`git pull` + `docker compose up -d --build`) with no local artifacts.
+# Build context = repo root (see deploy/docker-compose.yml).
 
+FROM node:22-alpine AS builder
 WORKDIR /app
-ENV NODE_ENV=production
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
 
-COPY app/ ./
-COPY static/ ./.next/static/
-COPY public/ ./public/
-
-# DEMO_MODE=0 -> real characters hit live Raider.IO; the /us/demo/skycoach
-# fixture still works. No ANTHROPIC_API_KEY -> deterministic fallback analyzer.
-ENV PORT=3000 HOSTNAME=0.0.0.0 DEMO_MODE=0
-
+FROM node:22-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production PORT=3000 HOSTNAME=0.0.0.0 DEMO_MODE=0
+# Next.js standalone output (self-contained server + minimal node_modules).
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
 EXPOSE 3000
 CMD ["node", "server.js"]
