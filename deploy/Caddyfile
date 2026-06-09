@@ -1,0 +1,17 @@
+# Automatic HTTPS for the server's public hostname. Caddy obtains and renews a
+# Let's Encrypt certificate via TLS-ALPN-01 on :443 (no port 80 needed), then
+# reverse-proxies to the Next.js app container.
+#
+# To use a real subdomain later (e.g. skycoach-advisor.821723.cloud4box.ru),
+# add a DNS A record -> 109.248.11.136 and change the site address below.
+
+821723.cloud4box.ru {
+	encode zstd gzip
+	reverse_proxy app:3000
+
+	header {
+		# Light hardening; the app sends its own content as needed.
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Content-Type-Options "nosniff"
+	}
+}
