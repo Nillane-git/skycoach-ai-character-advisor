@@ -1,5 +1,7 @@
 # SkyCoach AI — Character Advisor
 
+**Live:** https://821723.cloud4box.ru/ · **Deploy:** [`deploy.md`](deploy.md)
+
 An AI-powered World of Warcraft character advisor. Enter a character (region /
 realm / name) and SkyCoach analyzes gear progression, Mythic+ rating, raid
 readiness, and surfaces concrete next steps — plus a deterministic, formula-driven
