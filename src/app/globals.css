@@ -2,19 +2,29 @@
 
 /* Dark premium palette (force dark — no light mode). */
 :root {
-  --background: #0b0d10;
-  --foreground: #e7eaf0;
-  --card: #14171c;
-  --card-foreground: #e7eaf0;
-  --muted: #1b1f26;
-  --muted-foreground: #99a2b2;
-  --border: #242a33;
-  --input: #242a33;
+  --background: #090b0e;
+  --foreground: #eaedf3;
+  --card: #13171d;
+  --card-foreground: #eaedf3;
+  --muted: #181d24;
+  --muted-foreground: #aeb6c4;
+  --border: #262d37;
+  --input: #262d37;
   --ring: #7c8cf8;
 
   /* Accent — per-dashboard override via style={{ "--accent": classColor(class) }} */
   --accent: #7c8cf8;
-  --accent-foreground: #0b0d10;
+  --accent-foreground: #04161c;
+
+  /* WoW item-rarity scale (see src/config/rarity.ts) */
+  --r-common: #b6bcc6;
+  --r-uncommon: #36d44b;
+  --r-rare: #2a8cff;
+  --r-epic: #b657ff;
+  --r-legendary: #ff9d2e;
+
+  /* Rarity glow intensity, 0..1. Lower for calmer UI. */
+  --glow: 1;
 }
 
 @theme inline {
@@ -30,16 +40,36 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
 
+  --color-r-common: var(--r-common);
+  --color-r-uncommon: var(--r-uncommon);
+  --color-r-rare: var(--r-rare);
+  --color-r-epic: var(--r-epic);
+  --color-r-legendary: var(--r-legendary);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  /* Display face for epic headings & big numbers (Cinzel, wired in layout.tsx). */
+  --font-display: var(--font-cinzel);
 }
 
 body {
-  background: var(--background);
+  /* Accent-tinted ambient glow at the top, fading into near-black. */
+  background-color: var(--background);
+  background-image:
+    radial-gradient(110% 70% at 50% -8%, color-mix(in srgb, var(--accent) calc(13% * var(--glow)), transparent), transparent 60%),
+    radial-gradient(80% 50% at 100% 0%, color-mix(in srgb, var(--accent) calc(6% * var(--glow)), transparent), transparent 55%),
+    linear-gradient(180deg, #0c0f13, var(--background) 40%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 * {
   border-color: var(--border);
+}
+
+/* Let circular dials' drop-shadow glow bleed past the SVG viewport instead
+   of being hard-clipped at the edge. Pair with overflow-visible on the <svg>. */
+.dial-svg {
+  overflow: visible;
 }

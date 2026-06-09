@@ -33,7 +33,7 @@ export function Dashboard({ result }: { result: AnalysisResult }) {
           <div className="flex-1">
             <CharacterHeader character={character} />
           </div>
-          <div className="lg:border-l lg:border-white/10 lg:pl-8">
+          <div className="flex justify-center lg:pl-8">
             <CharacterScore score={analysis.characterScore} />
           </div>
         </CardContent>
