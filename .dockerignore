@@ -1,0 +1,11 @@
+node_modules
+.next
+.git
+.github
+deploy/_bundle
+test-results
+playwright-report
+playwright/.cache
+*.log
+.env*
+README.md
