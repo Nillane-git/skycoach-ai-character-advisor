@@ -33,12 +33,16 @@ describe("full pipeline over every fixture", () => {
       it("normalizes identity and picks the current raid by expansion_id", () => {
         expect(c.identity.name).toBe(raw.name);
         expect(["DPS", "HEALER", "TANK"]).toContain(c.identity.role);
-        // The fixtures all carry an older raid (expansion_id 10) plus the
-        // current tier (expansion_id 11) — the selector must pick the latter,
-        // proving it keys on expansion_id, not a hardcoded slug or progress.
+        // The selector must pick a raid at the HIGHEST expansion_id (the current
+        // tier), proving it keys on expansion_id rather than a hardcoded slug.
         if (raw.raid_progression && Object.keys(raw.raid_progression).length) {
           expect(c.currentRaid).not.toBeNull();
-          expect(c.currentRaid!.slug).toBe("current-raid-tier");
+          const entries = Object.entries(raw.raid_progression);
+          const maxExp = Math.max(...entries.map(([, v]) => v.expansion_id));
+          const slugsAtMax = entries
+            .filter(([, v]) => v.expansion_id === maxExp)
+            .map(([k]) => k);
+          expect(slugsAtMax).toContain(c.currentRaid!.slug);
         }
       });
 

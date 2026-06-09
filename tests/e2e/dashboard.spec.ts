@@ -9,9 +9,10 @@ test.describe("demo dashboard", () => {
   test("renders the full analysis for the demo character", async ({ page }) => {
     await page.goto("/us/demo/skycoach");
 
-    // Character header: the demo character's name is present.
+    // Character header: the demo character's name is present (the demo fixture
+    // is the real Raider.IO profile of Azunazx-Hyjal).
     await expect(
-      page.getByRole("heading", { name: /skycoach/i }).first(),
+      page.getByRole("heading", { name: /azunazx/i }).first(),
     ).toBeVisible();
 
     // Character score: a 0-100 integer rendered by the score panel.
