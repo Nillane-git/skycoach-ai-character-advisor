@@ -63,14 +63,13 @@ const COPY: Record<ErrorCode, Copy> = {
   },
 };
 
-// Errors that originate from the Raider.IO data source (not our own validation/
-// rate-limit). For these we can offer a "verify at the source" panel.
-const RAIDERIO_SOURCED: ReadonlySet<ErrorCode> = new Set<ErrorCode>([
+// Only the "nothing found / no data" screens get the verify panel — never the
+// success dashboard or the initial search, and not transient Raider.IO outages
+// (rate-limit / unavailable), where the character may well exist.
+const NOT_FOUND_CODES: ReadonlySet<ErrorCode> = new Set<ErrorCode>([
   "CHARACTER_NOT_FOUND",
   "REALM_NOT_FOUND",
   "EMPTY_OR_MALFORMED",
-  "RAIDERIO_UNAVAILABLE",
-  "RAIDERIO_RATE_LIMIT",
 ]);
 
 // Mirrors src/lib/raiderio/client.ts so the link reproduces the EXACT request.
@@ -108,7 +107,7 @@ function raiderioLinks(region: string, realm: string, name: string) {
 export function ErrorState({ code, region, realm, name }: ErrorStateProps) {
   const { icon: Icon, title, body } = COPY[code] ?? COPY.UNKNOWN;
   const showVerify =
-    RAIDERIO_SOURCED.has(code) && !!region && !!realm && !!name;
+    NOT_FOUND_CODES.has(code) && !!region && !!realm && !!name;
   const links = showVerify
     ? raiderioLinks(region!, realm!, name!)
     : null;
