@@ -1,45 +1,39 @@
 {
-  "name": "Skycoach",
-  "race": "Void Elf",
+  "name": "Azunazx",
+  "race": "Dwarf",
   "class": "Mage",
-  "active_spec_name": "Frost",
-  "active_spec_role": "Dps",
-  "gender": "male",
+  "active_spec_name": "Arcane",
+  "active_spec_role": "DPS",
+  "gender": "female",
   "faction": "alliance",
-  "achievement_points": 21450,
-  "thumbnail_url": "https://render.worldofwarcraft.com/us/character/demo/192/213827264-avatar.jpg",
+  "achievement_points": 52350,
+  "thumbnail_url": "https://render.worldofwarcraft.com/us/character/hyjal/156/154168220-avatar.jpg?alt=/wow/static/images/2d/avatar/3-1.jpg",
   "region": "us",
-  "realm": "Demo",
-  "last_crawled_at": "2026-06-07T11:42:00.000Z",
-  "profile_url": "https://raider.io/characters/us/demo/Skycoach",
-  "profile_banner": "hordebanner1",
-  "gear": {
-    "updated_at": "2026-06-07T11:42:00.000Z",
-    "item_level_equipped": 285,
-    "item_level_total": 287,
-    "artifact_traits": 0
-  },
+  "realm": "Hyjal",
+  "last_crawled_at": "2026-06-09T10:31:33.000Z",
+  "profile_url": "https://raider.io/characters/us/hyjal/Azunazx",
+  "profile_banner": "alliancebanner1",
   "mythic_plus_scores_by_season": [
     {
-      "season": "season-tww-3",
+      "season": "season-mn-1",
       "scores": {
-        "all": 3050,
-        "dps": 3050,
+        "all": 3920.9,
+        "dps": 3920.9,
         "healer": 0,
         "tank": 0,
-        "spec_0": 2750,
-        "spec_1": 0,
-        "spec_2": 0,
+        "spec_0": 3527.3,
+        "spec_1": 3098.5,
+        "spec_2": 3873,
         "spec_3": 0
       },
       "segments": {
         "all": {
-          "score": 2750,
-          "color": "#ff8000"
+          "score": 3920.9,
+          "color": "#ea6176"
         },
         "dps": {
-          "score": 2750,
-          "color": "#ff8000"
+          "score": 3920.9,
+          "color": "#ea6176"
         },
         "healer": {
           "score": 0,
@@ -48,140 +42,1072 @@
         "tank": {
           "score": 0,
           "color": "#ffffff"
+        },
+        "spec_0": {
+          "score": 3527.3,
+          "color": "#bc3ed1"
+        },
+        "spec_1": {
+          "score": 3098.5,
+          "color": "#0070dd"
+        },
+        "spec_2": {
+          "score": 3873,
+          "color": "#e65c82"
+        },
+        "spec_3": {
+          "score": 0,
+          "color": "#ffffff"
         }
       }
     }
   ],
   "mythic_plus_best_runs": [
     {
-      "dungeon": "Ara-Kara, City of Echoes",
-      "short_name": "ARAK",
-      "mythic_level": 14,
-      "completed_at": "2026-06-05T03:11:00.000Z",
-      "clear_time_ms": 1689000,
-      "par_time_ms": 1830000,
-      "num_keystone_upgrades": 2,
-      "map_challenge_mode_id": 503,
-      "zone_id": 14938,
-      "score": 378.4,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/1-arakara"
-    },
-    {
-      "dungeon": "City of Threads",
-      "short_name": "COT",
-      "mythic_level": 13,
-      "completed_at": "2026-06-03T22:48:00.000Z",
-      "clear_time_ms": 1902000,
-      "par_time_ms": 2040000,
-      "num_keystone_upgrades": 2,
-      "map_challenge_mode_id": 505,
-      "zone_id": 14882,
-      "score": 360.1,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/2-cityofthreads"
-    },
-    {
-      "dungeon": "The Dawnbreaker",
-      "short_name": "DAWN",
-      "mythic_level": 13,
-      "completed_at": "2026-06-04T01:20:00.000Z",
-      "clear_time_ms": 1755000,
-      "par_time_ms": 1860000,
-      "num_keystone_upgrades": 3,
-      "map_challenge_mode_id": 502,
-      "zone_id": 14971,
-      "score": 366.9,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/3-dawnbreaker"
-    },
-    {
-      "dungeon": "The Stonevault",
-      "short_name": "SV",
-      "mythic_level": 12,
-      "completed_at": "2026-06-02T19:05:00.000Z",
-      "clear_time_ms": 1980000,
-      "par_time_ms": 2100000,
-      "num_keystone_upgrades": 2,
-      "map_challenge_mode_id": 501,
-      "zone_id": 14883,
-      "score": 343.7,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/4-stonevault"
-    },
-    {
-      "dungeon": "Mists of Tirna Scithe",
-      "short_name": "MIST",
-      "mythic_level": 12,
-      "completed_at": "2026-06-01T20:33:00.000Z",
-      "clear_time_ms": 1611000,
-      "par_time_ms": 1740000,
-      "num_keystone_upgrades": 2,
-      "map_challenge_mode_id": 375,
-      "zone_id": 12916,
-      "score": 345.2,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/5-mists"
-    },
-    {
-      "dungeon": "The Necrotic Wake",
-      "short_name": "NW",
-      "mythic_level": 12,
-      "completed_at": "2026-05-31T18:14:00.000Z",
-      "clear_time_ms": 1722000,
-      "par_time_ms": 1860000,
-      "num_keystone_upgrades": 2,
-      "map_challenge_mode_id": 376,
-      "zone_id": 12831,
-      "score": 342,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/6-necroticwake"
-    },
-    {
-      "dungeon": "Siege of Boralus",
-      "short_name": "SIEGE",
-      "mythic_level": 11,
-      "completed_at": "2026-05-30T16:47:00.000Z",
-      "clear_time_ms": 2010000,
-      "par_time_ms": 2160000,
+      "dungeon": "Skyreach",
+      "short_name": "SR",
+      "mythic_level": 21,
+      "completed_at": "2026-05-27T21:28:36.000Z",
+      "clear_time_ms": 1635986,
+      "keystone_run_id": 30661386,
+      "par_time_ms": 1680999,
       "num_keystone_upgrades": 1,
-      "map_challenge_mode_id": 353,
-      "zone_id": 9354,
-      "score": 327.5,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/7-siege"
+      "map_challenge_mode_id": 161,
+      "zone_id": 6988,
+      "zone_expansion_id": 5,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_arakkoaspires.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion5/base/skyreach.jpg",
+      "score": 501,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30661386-21-skyreach",
+      "spec": {
+        "id": 64,
+        "name": "Frost",
+        "slug": "frost",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "dps"
     },
     {
-      "dungeon": "Grim Batol",
-      "short_name": "GB",
-      "mythic_level": 11,
-      "completed_at": "2026-05-29T21:02:00.000Z",
-      "clear_time_ms": 2055000,
-      "par_time_ms": 2220000,
+      "dungeon": "Nexus-Point Xenas",
+      "short_name": "NPX",
+      "mythic_level": 20,
+      "completed_at": "2026-05-27T22:13:13.000Z",
+      "clear_time_ms": 1478736,
+      "keystone_run_id": 30699237,
+      "par_time_ms": 1800999,
       "num_keystone_upgrades": 1,
-      "map_challenge_mode_id": 507,
-      "zone_id": 4950,
-      "score": 325.8,
-      "affixes": [],
-      "url": "https://raider.io/mythic-plus-runs/season-tww-3/8-grimbatol"
+      "map_challenge_mode_id": 559,
+      "zone_id": 16573,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_voidscararena.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/nexuspoint-xenas.jpg",
+      "score": 491.7,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30699237-20-nexuspoint-xenas",
+      "spec": {
+        "id": 64,
+        "name": "Frost",
+        "slug": "frost",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "dps"
+    },
+    {
+      "dungeon": "Magisters' Terrace",
+      "short_name": "MT",
+      "mythic_level": 20,
+      "completed_at": "2026-05-27T16:20:36.000Z",
+      "clear_time_ms": 1809691,
+      "keystone_run_id": 30549569,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 558,
+      "zone_id": 15829,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_magistersterrace.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/magisters-terrace.jpg",
+      "score": 489.2,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30549569-20-magisters-terrace",
+      "spec": {
+        "id": 64,
+        "name": "Frost",
+        "slug": "frost",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "dps"
+    },
+    {
+      "dungeon": "Windrunner Spire",
+      "short_name": "WS",
+      "mythic_level": 20,
+      "completed_at": "2026-05-27T17:45:45.000Z",
+      "clear_time_ms": 1772992,
+      "keystone_run_id": 30641583,
+      "par_time_ms": 1980999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 557,
+      "zone_id": 15808,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_windrunnerspire.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/windrunner-spire.jpg",
+      "score": 488.9,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30641583-20-windrunner-spire",
+      "spec": {
+        "id": 64,
+        "name": "Frost",
+        "slug": "frost",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "dps"
+    },
+    {
+      "dungeon": "Seat of the Triumvirate",
+      "short_name": "SEAT",
+      "mythic_level": 20,
+      "completed_at": "2026-05-28T18:09:28.000Z",
+      "clear_time_ms": 1849748,
+      "keystone_run_id": 30962021,
+      "par_time_ms": 2040999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 239,
+      "zone_id": 8910,
+      "zone_expansion_id": 6,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_triumvirate_darknaaru.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion6/base/seat-of-the-triumvirate.jpg",
+      "score": 488.5,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30962021-20-seat-of-the-triumvirate",
+      "spec": {
+        "id": 64,
+        "name": "Frost",
+        "slug": "frost",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "dps"
+    },
+    {
+      "dungeon": "Algeth'ar Academy",
+      "short_name": "AA",
+      "mythic_level": 20,
+      "completed_at": "2026-05-26T18:56:23.000Z",
+      "clear_time_ms": 1691029,
+      "keystone_run_id": 30315211,
+      "par_time_ms": 1860999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 402,
+      "zone_id": 14032,
+      "zone_expansion_id": 9,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_dragonacademy.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion9/base/algethar-academy.jpg",
+      "score": 488.4,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30315211-20-algethar-academy",
+      "spec": {
+        "id": 62,
+        "name": "Arcane",
+        "slug": "arcane",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 0
+      },
+      "role": "dps"
+    },
+    {
+      "dungeon": "Maisara Caverns",
+      "short_name": "MC",
+      "mythic_level": 20,
+      "completed_at": "2026-06-01T16:06:31.000Z",
+      "clear_time_ms": 1876272,
+      "keystone_run_id": 32225065,
+      "par_time_ms": 1980999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 560,
+      "zone_id": 16395,
+      "zone_expansion_id": 11,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/inv_achievement_dungeon_maisarahills.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion11/base/maisara-caverns.jpg",
+      "score": 487,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/32225065-20-maisara-caverns",
+      "spec": {
+        "id": 64,
+        "name": "Frost",
+        "slug": "frost",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 2
+      },
+      "role": "dps"
+    },
+    {
+      "dungeon": "Pit of Saron",
+      "short_name": "POS",
+      "mythic_level": 20,
+      "completed_at": "2026-05-26T19:38:06.000Z",
+      "clear_time_ms": 1748045,
+      "keystone_run_id": 30315205,
+      "par_time_ms": 1800999,
+      "num_keystone_upgrades": 1,
+      "map_challenge_mode_id": 556,
+      "zone_id": 4813,
+      "zone_expansion_id": 2,
+      "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_dungeon_icecrown_pitofsaron.jpg",
+      "background_image_url": "https://cdn.raiderio.net/images/dungeons/expansion2/base/pit-of-saron.jpg",
+      "score": 486.1,
+      "affixes": [
+        {
+          "id": 9,
+          "name": "Tyrannical",
+          "description": "Bosses have 25% more health. Bosses and their minions inflict up to 15% increased damage.",
+          "icon": "achievement_boss_archaedas",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/achievement_boss_archaedas.jpg",
+          "wowhead_url": "https://wowhead.com/affix=9"
+        },
+        {
+          "id": 10,
+          "name": "Fortified",
+          "description": "Non-boss enemies have 20% more health and inflict up to 20% increased damage.",
+          "icon": "ability_toughness",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_toughness.jpg",
+          "wowhead_url": "https://wowhead.com/affix=10"
+        },
+        {
+          "id": 147,
+          "name": "Xal'atath's Guile",
+          "description": "Xal'atath betrays players, revoking her bargains while making deaths subtract 15 seconds from time remaining.",
+          "icon": "ability_racial_chillofnight",
+          "icon_url": "https://cdn.raiderio.net/images/wow/icons/large/ability_racial_chillofnight.jpg",
+          "wowhead_url": "https://wowhead.com/affix=147"
+        }
+      ],
+      "url": "https://raider.io/mythic-plus-runs/season-mn-1/30315205-20-pit-of-saron",
+      "spec": {
+        "id": 63,
+        "name": "Fire",
+        "slug": "fire",
+        "class_id": 8,
+        "role": "dps",
+        "is_melee": false,
+        "patch": "1.0.0",
+        "ordinal": 1
+      },
+      "role": "dps"
     }
   ],
-  "raid_progression": {
-    "nerubar-palace": {
-      "summary": "8/8 H",
-      "total_bosses": 8,
-      "normal_bosses_killed": 8,
-      "heroic_bosses_killed": 8,
-      "mythic_bosses_killed": 3,
-      "expansion_id": 10
+  "gear": {
+    "created_at": "2026-06-09T10:31:33.262Z",
+    "updated_at": "2026-06-09T10:31:33.262Z",
+    "source": "s3",
+    "item_level_equipped": 290,
+    "item_level_total": 0,
+    "artifact_traits": 0,
+    "corruption": {
+      "added": 0,
+      "resisted": 0,
+      "total": 0,
+      "cloakRank": 0,
+      "spells": []
     },
-    "current-raid-tier": {
-      "summary": "6/8 H",
-      "total_bosses": 8,
-      "normal_bosses_killed": 8,
-      "heroic_bosses_killed": 6,
-      "mythic_bosses_killed": 2,
-      "expansion_id": 11
+    "items": {
+      "head": {
+        "item_id": 250060,
+        "item_level": 289,
+        "enchant": 8017,
+        "icon": "inv_helm_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Veil",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": true,
+        "azerite_powers": [
+          {
+            "id": 580,
+            "spell": {
+              "id": 0,
+              "school": 0,
+              "icon": "inv_misc_questionmark",
+              "name": "Unknown",
+              "rank": null
+            },
+            "tier": 999
+          },
+          {
+            "id": 580,
+            "spell": {
+              "id": 0,
+              "school": 0,
+              "icon": "inv_misc_questionmark",
+              "name": "Unknown",
+              "rank": null
+            },
+            "tier": 999
+          },
+          {
+            "id": 580,
+            "spell": {
+              "id": 0,
+              "school": 0,
+              "icon": "inv_misc_questionmark",
+              "name": "Unknown",
+              "rank": null
+            },
+            "tier": 999
+          },
+          {
+            "id": 580,
+            "spell": {
+              "id": 0,
+              "school": 0,
+              "icon": "inv_misc_questionmark",
+              "name": "Unknown",
+              "rank": null
+            },
+            "tier": 999
+          },
+          null
+        ],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "tier": "35",
+        "gems": [
+          240900
+        ],
+        "gems_detail": [
+          {
+            "id": 240900,
+            "name": "16 Mast & 7 Haste",
+            "icon": "inv_12_profession_jewelcrafting_rare_gem_cut_nature_purple"
+          }
+        ],
+        "enchants": [
+          8017
+        ],
+        "enchants_detail": [
+          {
+            "id": 244007,
+            "name": "Enchant Helm - Empowered Rune of Avoidance",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_blue"
+          }
+        ],
+        "bonuses": [
+          6652,
+          13440,
+          13338,
+          13575,
+          12806,
+          13534
+        ]
+      },
+      "neck": {
+        "item_id": 249337,
+        "item_level": 289,
+        "icon": "inv_12_jewelry_devouringhost_necklace_bronze",
+        "name": "Ribbon of Coiled Malice",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [
+          240983
+        ],
+        "gems_detail": [
+          {
+            "id": 240983,
+            "name": "32 Primary",
+            "icon": "inv_12_profession_jewelcrafting_epic_gem_cut_green"
+          }
+        ],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          6652,
+          13668,
+          13335,
+          12806
+        ]
+      },
+      "shoulder": {
+        "item_id": 250058,
+        "item_level": 289,
+        "enchant": 8001,
+        "icon": "inv_shoulder_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Leyline Nexi",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "tier": "35",
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [
+          8001
+        ],
+        "enchants_detail": [
+          {
+            "id": 243991,
+            "name": "Enchant Shoulders - Amirdrassil's Grace",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_blue"
+          }
+        ],
+        "bonuses": [
+          13335,
+          13340,
+          6652,
+          13574,
+          12806
+        ]
+      },
+      "back": {
+        "item_id": 239656,
+        "item_level": 285,
+        "icon": "inv_cape_cloth_questbloodelf_b_01",
+        "name": "Adherent's Silken Shroud",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          12214,
+          13667,
+          12497,
+          12066,
+          8960,
+          12384,
+          8793,
+          13622
+        ]
+      },
+      "chest": {
+        "item_id": 250063,
+        "item_level": 289,
+        "enchant": 7987,
+        "icon": "inv_chest_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Robe",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "tier": "35",
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [
+          7987
+        ],
+        "enchants_detail": [
+          {
+            "id": 243977,
+            "name": "Enchant Chest - Mark of the Worldsoul",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_blue"
+          }
+        ],
+        "bonuses": [
+          6652,
+          13440,
+          13336,
+          13575,
+          12806
+        ]
+      },
+      "waist": {
+        "item_id": 250057,
+        "item_level": 289,
+        "icon": "inv_belt_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Sage Cord",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          12806,
+          6652,
+          13335,
+          12667,
+          3174
+        ]
+      },
+      "shirt": {
+        "item_id": 144372,
+        "item_level": 1,
+        "icon": "inv_chest_leather_01",
+        "name": "Hide of the Murderaffe",
+        "item_quality": 3,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": []
+      },
+      "wrist": {
+        "item_id": 249315,
+        "item_level": 289,
+        "icon": "inv_bracer_cloth_raidpriestmidnight_d_01",
+        "name": "Voracious Wristwraps",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          6652,
+          12667,
+          13577,
+          13335,
+          12806
+        ]
+      },
+      "hands": {
+        "item_id": 250061,
+        "item_level": 289,
+        "icon": "inv_glove_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Gloves",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "tier": "35",
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          6652,
+          13335,
+          13337,
+          13574,
+          12806
+        ]
+      },
+      "legs": {
+        "item_id": 250059,
+        "item_level": 289,
+        "enchant": 7935,
+        "icon": "inv_pant_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Britches",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "tier": "35",
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [
+          7935
+        ],
+        "enchants_detail": [
+          {
+            "id": 240133,
+            "name": "41 Int & 115 Sta",
+            "icon": "inv_tailoring_spellthread_orange_spellthread"
+          }
+        ],
+        "bonuses": [
+          13335,
+          42,
+          13339,
+          13575,
+          12806
+        ]
+      },
+      "feet": {
+        "item_id": 250062,
+        "item_level": 289,
+        "enchant": 7963,
+        "icon": "inv_boot_cloth_raidmagemidnight_d_01",
+        "name": "Voidbreaker's Treads",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [
+          7963
+        ],
+        "enchants_detail": [
+          {
+            "id": 243953,
+            "name": "Enchant Boots - Lynx's Dexterity",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_blue"
+          }
+        ],
+        "bonuses": [
+          12806,
+          13335,
+          41,
+          3174
+        ]
+      },
+      "finger1": {
+        "item_id": 251093,
+        "item_level": 289,
+        "enchant": 7967,
+        "icon": "inv_12_trinket_devouring_host_currency1_silver",
+        "name": "Omission of Light",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [
+          240900
+        ],
+        "gems_detail": [
+          {
+            "id": 240900,
+            "name": "16 Mast & 7 Haste",
+            "icon": "inv_12_profession_jewelcrafting_rare_gem_cut_nature_purple"
+          }
+        ],
+        "enchants": [
+          7967
+        ],
+        "enchants_detail": [
+          {
+            "id": 243957,
+            "name": "Enchant Ring - Eyes of the Eagle",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_blue"
+          }
+        ],
+        "bonuses": [
+          13440,
+          6652,
+          13668,
+          12699,
+          12806
+        ]
+      },
+      "finger2": {
+        "item_id": 251513,
+        "item_level": 285,
+        "enchant": 7967,
+        "icon": "inv_12_profession_jewelcrafting_ring3_silver",
+        "name": "Loa Worshiper's Band",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [
+          240890
+        ],
+        "gems_detail": [
+          {
+            "id": 240890,
+            "name": "16 Haste & 7 Crit",
+            "icon": "inv_12_profession_jewelcrafting_rare_gem_cut_fire_green"
+          }
+        ],
+        "enchants": [
+          7967
+        ],
+        "enchants_detail": [
+          {
+            "id": 243957,
+            "name": "Enchant Ring - Eyes of the Eagle",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_blue"
+          }
+        ],
+        "bonuses": [
+          12214,
+          13667,
+          8960,
+          12497,
+          12066,
+          13622
+        ]
+      },
+      "trinket1": {
+        "item_id": 249343,
+        "item_level": 298,
+        "icon": "inv_12_trinket_raid_dreamrift_gazeofthealnseer",
+        "name": "Gaze of the Alnseer",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          6652,
+          13335,
+          13654
+        ]
+      },
+      "trinket2": {
+        "item_id": 249346,
+        "item_level": 298,
+        "icon": "inv_12_trinket_raid_voidspire_int1_voiddragoneye",
+        "name": "Vaelgor's Final Stare",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [],
+        "enchants_detail": [],
+        "bonuses": [
+          6652,
+          13335,
+          13654
+        ]
+      },
+      "mainhand": {
+        "item_id": 193707,
+        "item_level": 298,
+        "enchant": 8039,
+        "icon": "inv_staff_2h_drakonid_c_01",
+        "name": "Final Grade",
+        "item_quality": 4,
+        "is_legendary": false,
+        "is_azerite_armor": false,
+        "azerite_powers": [],
+        "corruption": {
+          "added": 0,
+          "resisted": 0,
+          "total": 0
+        },
+        "domination_shards": [],
+        "gems": [],
+        "gems_detail": [],
+        "enchants": [
+          8039
+        ],
+        "enchants_detail": [
+          {
+            "id": 244029,
+            "name": "Enchant Weapon - Acuity of the Ren'dorei",
+            "icon": "inv_12_profession_enchanting_enchantedvellum_purple"
+          }
+        ],
+        "bonuses": [
+          13440,
+          6652,
+          12701,
+          13654
+        ]
+      }
+    }
+  },
+  "raid_progression": {
+    "sporefall": {
+      "summary": "",
+      "expansion_id": 11,
+      "total_bosses": 1,
+      "normal_bosses_killed": 0,
+      "heroic_bosses_killed": 0,
+      "mythic_bosses_killed": 0
+    },
+    "tier-mn-1": {
+      "summary": "9/9 M",
+      "expansion_id": 11,
+      "total_bosses": 9,
+      "normal_bosses_killed": 9,
+      "heroic_bosses_killed": 7,
+      "mythic_bosses_killed": 9
     }
   }
 }
