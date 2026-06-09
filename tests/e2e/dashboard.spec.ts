@@ -51,9 +51,11 @@ test.describe("demo dashboard", () => {
     await expect(page.getByText("Подробнее").first()).toBeVisible();
     await expect(page.getByText("Услуги").first()).toBeVisible();
 
-    // Fallback banner: hidden when no key is configured (deterministic is the
-    // expected path), so the reviewer sees a clean dashboard.
-    await expect(page.getByText(/детерминированный отчёт/i)).toHaveCount(0);
+    // Fallback notice: with no AI key (the demo scenario) the deterministic-
+    // engine banner is shown, explaining that an AI API token would make these
+    // text sections model-written.
+    await expect(page.getByText(/Демо-режим/i)).toBeVisible();
+    await expect(page.getByText(/AI API-токеном/i)).toBeVisible();
   });
 });
 

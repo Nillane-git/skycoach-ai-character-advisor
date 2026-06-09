@@ -18,14 +18,14 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Dashboard({ result }: { result: AnalysisResult }) {
   const { character, analysis, meta } = result;
   const accent = classColor(character.identity.className);
-  const showFallback = meta.source === "fallback" && meta.keyExpected;
+  const showFallback = meta.source === "fallback";
 
   return (
     <div
       className="mx-auto w-full max-w-6xl space-y-6 px-4 py-8 sm:py-10"
       style={{ ["--accent"]: accent } as CSSProperties}
     >
-      {showFallback ? <FallbackBanner /> : null}
+      {showFallback ? <FallbackBanner keyExpected={meta.keyExpected} /> : null}
 
       {/* Identity + headline score */}
       <Card>
