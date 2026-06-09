@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cinzel } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -14,10 +14,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Display face for epic headings & large score numbers.
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin"],
+// Display face for epic headings & large score numbers. Playfair Display (unlike
+// Cinzel) ships Cyrillic glyphs, so Russian headings render correctly instead of
+// falling back to tofu boxes.
+const display = Playfair_Display({
+  variable: "--font-display-face",
+  subsets: ["latin", "cyrillic"],
   weight: ["600", "700", "800"],
 });
 
@@ -35,7 +37,7 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`dark ${geistSans.variable} ${geistMono.variable} ${cinzel.variable} h-full antialiased`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${display.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col font-sans">
         <SiteHeader />
