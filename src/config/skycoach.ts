@@ -4,20 +4,20 @@ export const SKYCOACH_CARDS = [
     description:
       "Сократи время до следующего рубежа прогресса своего персонажа.",
     cta: "Смотреть варианты",
-    href: "#",
+    href: "https://skycoach.gg/wow-boost",
   },
   {
     title: "Экспертное сопровождение",
     description:
       "Играй с опытными игроками, чтобы прокачать геймплей и принятие решений.",
     cta: "Подробнее",
-    href: "#",
+    href: "https://skycoach.gg/wow-boost",
   },
   {
     title: "Ускорь рост персонажа",
     description: "Экономь время и фокусируйся на контенте, который нравится.",
     cta: "Услуги",
-    href: "#",
+    href: "https://skycoach.gg/wow-boost",
   },
 ] as const;
 
