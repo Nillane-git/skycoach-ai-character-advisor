@@ -12,8 +12,25 @@ interface PageProps {
   params: Promise<{ region: string; realm: string; name: string }>;
 }
 
+/**
+ * Route segments arrive percent-encoded for non-ASCII values — e.g. the Cyrillic
+ * names/realms of Russian-realm characters (Мунфарион, Ревущий фьорд). Decode so
+ * the Raider.IO lookup receives the real name instead of "%D0%9C..." (which it
+ * reports as "character not found"). Safe/idempotent for plain ASCII segments.
+ */
+function decodeParam(value: string): string {
+  try {
+    return decodeURIComponent(value);
+  } catch {
+    return value;
+  }
+}
+
 export default async function CharacterPage({ params }: PageProps) {
-  const { region, realm, name } = await params;
+  const raw = await params;
+  const region = raw.region;
+  const realm = decodeParam(raw.realm);
+  const name = decodeParam(raw.name);
 
   if (!VALID_REGIONS.has(region.toLowerCase())) {
     notFound();
