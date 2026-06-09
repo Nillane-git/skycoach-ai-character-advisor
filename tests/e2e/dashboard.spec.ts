@@ -84,4 +84,35 @@ test.describe("home page", () => {
       page.getByRole("button", { name: /Анализировать/i }),
     ).toBeVisible();
   });
+
+  test("Analyze navigates to the character route for a Latin realm", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page.getByRole("button", { name: /Осмотреться/i }).click();
+
+    await page.getByLabel(/Сервер/i).fill("Twisting Nether");
+    await page.getByLabel(/Персонаж/i).fill("Kelthuzad");
+    await page.getByRole("button", { name: /Анализировать/i }).click();
+
+    await expect(page).toHaveURL(/\/us\/twisting-nether\/Kelthuzad$/);
+  });
+
+  test("Analyze navigates for a Cyrillic (RU) realm instead of no-op", async ({
+    page,
+  }) => {
+    // Regression: the slug helper blanked out non-ASCII realms, so submit was
+    // silently swallowed for RU realms ("button doesn't work on some chars").
+    await page.goto("/");
+    await page.getByRole("button", { name: /Осмотреться/i }).click();
+
+    await page.getByLabel(/Сервер/i).fill("Гордунни");
+    await page.getByLabel(/Персонаж/i).fill("Мунфарион");
+    await page.getByRole("button", { name: /Анализировать/i }).click();
+
+    // We must leave the home page (the bug kept us on "/"). The realm/name
+    // segments are percent-encoded in the URL.
+    await expect(page).not.toHaveURL(/\/$/);
+    await expect(page).toHaveURL(/\/us\/.+\/.+/);
+  });
 });

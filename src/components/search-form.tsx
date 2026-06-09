@@ -28,9 +28,13 @@ export function SearchForm() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!canSubmit) return;
-    const slug = realmSlug(realm);
-    if (!slug) return;
-    router.push(`/${region}/${slug}/${encodeURIComponent(name.trim())}`);
+    // Fall back to the raw (trimmed) realm if slugging yields nothing, so the
+    // submit is never silently swallowed for unusual inputs. The route segment
+    // is decoded server-side, so a non-ASCII realm still reaches Raider.IO.
+    const slug = realmSlug(realm) || realm.trim();
+    router.push(
+      `/${region}/${encodeURIComponent(slug)}/${encodeURIComponent(name.trim())}`,
+    );
   }
 
   return (
