@@ -21,43 +21,43 @@ interface Copy {
 const COPY: Record<ErrorCode, Copy> = {
   CHARACTER_NOT_FOUND: {
     icon: UserX,
-    title: "Character not found",
-    body: "We couldn't find that character on Raider.IO. Double-check the name, realm and region — capitalization doesn't matter, but spelling does.",
+    title: "Персонаж не найден",
+    body: "Не нашли такого персонажа на Raider.IO. Проверь имя, сервер и регион — регистр не важен, а вот написание важно.",
   },
   REALM_NOT_FOUND: {
     icon: MapPinOff,
-    title: "Realm not found",
-    body: "That realm isn't on record for the selected region. Make sure you picked the right region and spelled the realm correctly.",
+    title: "Сервер не найден",
+    body: "Такого сервера нет в выбранном регионе. Убедись, что выбрал правильный регион и верно написал название сервера.",
   },
   RAIDERIO_UNAVAILABLE: {
     icon: ServerCrash,
-    title: "Raider.IO is unavailable",
-    body: "The Raider.IO service didn't respond in time. This is usually temporary — please try again in a moment.",
+    title: "Raider.IO недоступен",
+    body: "Сервис Raider.IO не ответил вовремя. Обычно это временно — попробуй ещё раз через минуту.",
   },
   RAIDERIO_RATE_LIMIT: {
     icon: Timer,
-    title: "Raider.IO is rate limiting",
-    body: "Raider.IO is receiving a lot of traffic right now. Give it a minute and try your lookup again.",
+    title: "Raider.IO ограничивает запросы",
+    body: "Сейчас на Raider.IO много трафика. Подожди минуту и повтори запрос.",
   },
   EMPTY_OR_MALFORMED: {
     icon: FileWarning,
-    title: "No progression data yet",
-    body: "This character exists but has no gear, Mythic+ or raid history to analyze. Try a more active character.",
+    title: "Пока нет данных о прогрессе",
+    body: "Персонаж существует, но у него нет экипировки, Mythic+ или истории рейдов для анализа. Попробуй более активного персонажа.",
   },
   INVALID_INPUT: {
     icon: AlertTriangle,
-    title: "Check your search",
-    body: "Something about that request didn't look right. Pick a region and enter a realm and character name.",
+    title: "Проверь запрос",
+    body: "Что-то в запросе выглядит некорректно. Выбери регион и введи сервер и имя персонажа.",
   },
   OUR_RATE_LIMIT: {
     icon: Timer,
-    title: "Too many requests",
-    body: "You've run a lot of analyses in a short window. Take a short break and try again shortly.",
+    title: "Слишком много запросов",
+    body: "Ты запустил много анализов за короткое время. Сделай небольшую паузу и попробуй снова.",
   },
   UNKNOWN: {
     icon: AlertTriangle,
-    title: "Something went wrong",
-    body: "An unexpected error occurred while building this report. Please try again, or look up a different character.",
+    title: "Что-то пошло не так",
+    body: "При сборке отчёта произошла непредвиденная ошибка. Попробуй ещё раз или посмотри другого персонажа.",
   },
 };
 
@@ -82,7 +82,7 @@ export function ErrorState({ code }: { code: ErrorCode }) {
         href="/"
         className={buttonVariants({ variant: "secondary", className: "mt-8" })}
       >
-        Try another character
+        Посмотреть другого персонажа
         <ArrowRight />
       </Link>
     </section>

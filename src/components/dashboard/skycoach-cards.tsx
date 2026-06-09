@@ -26,7 +26,7 @@ export function SkycoachCards({
       <div className="flex items-center gap-2">
         <Rocket className="size-4 text-[var(--accent)]" aria-hidden="true" />
         <h2 className="text-sm font-semibold uppercase tracking-wider text-white/50">
-          Accelerate with SkyCoach
+          Ускорься со SkyCoach
         </h2>
       </div>
 

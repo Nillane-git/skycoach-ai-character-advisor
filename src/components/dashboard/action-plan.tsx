@@ -13,7 +13,7 @@ export function ActionPlan({ actionPlan }: { actionPlan: string[] }) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <ListChecks className="size-4 text-[var(--accent)]" aria-hidden="true" />
-          Action Plan
+          План действий
         </CardTitle>
       </CardHeader>
       <CardContent>

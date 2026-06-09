@@ -42,7 +42,7 @@ export async function runAnalysis(
 
   // --- Empty / malformed guard ---------------------------------------------
   if (character.flags.isEmpty) {
-    throw new AppError("EMPTY_OR_MALFORMED", "No progression data yet.");
+    throw new AppError("EMPTY_OR_MALFORMED", "Пока нет данных о прогрессе для анализа.");
   }
 
   // --- Analyze (numbers deterministic, text from Claude or fallback) --------

@@ -14,7 +14,7 @@ export function Roadmap({ roadmap }: { roadmap: RoadmapStep[] }) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <MapIcon className="size-4 text-[var(--accent)]" aria-hidden="true" />
-          Progression Roadmap
+          Дорожная карта
         </CardTitle>
       </CardHeader>
       <CardContent>

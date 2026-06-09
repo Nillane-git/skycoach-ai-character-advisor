@@ -12,15 +12,15 @@ export function Hero() {
       <div className="flex flex-col items-center text-center">
         <span className="mb-5 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60">
           <Sparkles className="size-3.5 text-[var(--accent)]" aria-hidden="true" />
-          AI-powered WoW progression coach
+          AI-коуч прогресса в WoW
         </span>
 
         <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-          Understand Your WoW Character
+          Разбери своего WoW-персонажа
         </h1>
         <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-white/60 sm:text-lg">
-          AI-powered analysis of gear progression, Mythic+, raid readiness and
-          next steps.
+          AI-анализ прогресса экипировки, Mythic+, готовности к рейду и
+          следующих шагов.
         </p>
       </div>
 

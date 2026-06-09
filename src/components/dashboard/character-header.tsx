@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const ROLE_META: Record<Role, { label: string; icon: typeof Shield }> = {
-  TANK: { label: "Tank", icon: Shield },
-  HEALER: { label: "Healer", icon: Heart },
-  DPS: { label: "DPS", icon: Swords },
+  TANK: { label: "Танк", icon: Shield },
+  HEALER: { label: "Хилер", icon: Heart },
+  DPS: { label: "ДД", icon: Swords },
 };
 
 export function CharacterHeader({
@@ -17,12 +17,15 @@ export function CharacterHeader({
   const { identity } = character;
   const role = ROLE_META[identity.role];
   const RoleIcon = role.icon;
+  const faction = identity.faction.toLowerCase();
   const factionClass =
-    identity.faction.toLowerCase() === "alliance"
+    faction === "alliance"
       ? "text-sky-300"
-      : identity.faction.toLowerCase() === "horde"
+      : faction === "horde"
         ? "text-red-300"
         : "text-white/60";
+  const factionLabel =
+    faction === "alliance" ? "Альянс" : faction === "horde" ? "Орда" : identity.faction;
 
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -66,7 +69,7 @@ export function CharacterHeader({
           {role.label}
         </Badge>
         <Badge variant="outline" className={cn(factionClass)}>
-          {identity.faction}
+          {factionLabel}
         </Badge>
       </div>
     </div>

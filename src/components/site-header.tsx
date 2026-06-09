@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Swords } from "lucide-react";
 
 const NAV = [
-  { label: "Analyze", href: "/" },
-  { label: "Demo", href: "/us/demo/skycoach" },
+  { label: "Анализ", href: "/" },
+  { label: "Демо", href: "/us/demo/skycoach" },
 ];
 
 export function SiteHeader() {

@@ -1,16 +1,21 @@
-# Automatic HTTPS for the server's public hostname. Caddy obtains and renews a
-# Let's Encrypt certificate via TLS-ALPN-01 on :443 (no port 80 needed), then
-# reverse-proxies to the Next.js app container.
+# Automatic HTTPS. Caddy obtains and renews Let's Encrypt certificates via
+# TLS-ALPN-01 on :443 (no port 80 needed), then reverse-proxies to the Next.js
+# app container.
 #
-# To use a real subdomain later (e.g. skycoach-advisor.821723.cloud4box.ru),
-# add a DNS A record -> 109.248.11.136 and change the site address below.
+# Two site names are served:
+#   - skycoach-advisor.821723.cloud4box.ru  (target subdomain — activates the
+#     moment its DNS A record -> 109.248.11.136 exists in the cloud4box zone)
+#   - 821723.cloud4box.ru                    (the server's base hostname, which
+#     already resolves — keeps the app reachable until the subdomain DNS lands)
+#
+# A failed cert for a name that doesn't resolve yet does NOT stop the other name
+# from being served; Caddy retries and picks the subdomain up automatically.
 
-821723.cloud4box.ru {
+skycoach-advisor.821723.cloud4box.ru, 821723.cloud4box.ru {
 	encode zstd gzip
 	reverse_proxy app:3000
 
 	header {
-		# Light hardening; the app sends its own content as needed.
 		Referrer-Policy "strict-origin-when-cross-origin"
 		X-Content-Type-Options "nosniff"
 	}

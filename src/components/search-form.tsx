@@ -43,7 +43,7 @@ export function SearchForm() {
     >
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-[7rem_1fr_1fr]">
         <div className="space-y-1.5">
-          <Label htmlFor="region">Region</Label>
+          <Label htmlFor="region">Регион</Label>
           <Select
             id="region"
             value={region}
@@ -58,7 +58,7 @@ export function SearchForm() {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="realm">Realm</Label>
+          <Label htmlFor="realm">Сервер</Label>
           <Input
             id="realm"
             value={realm}
@@ -70,7 +70,7 @@ export function SearchForm() {
         </div>
 
         <div className="space-y-1.5">
-          <Label htmlFor="name">Character</Label>
+          <Label htmlFor="name">Персонаж</Label>
           <Input
             id="name"
             value={name}
@@ -85,7 +85,7 @@ export function SearchForm() {
       <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <Button type="submit" disabled={!canSubmit} className="sm:w-auto">
           <Search />
-          Analyze character
+          Анализировать
         </Button>
 
         <Link
@@ -93,7 +93,7 @@ export function SearchForm() {
           className="inline-flex items-center gap-1.5 self-start rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white"
         >
           <Sparkles className="size-3.5" aria-hidden="true" />
-          Try the demo character
+          Попробовать демо-персонажа
         </Link>
       </div>
     </form>

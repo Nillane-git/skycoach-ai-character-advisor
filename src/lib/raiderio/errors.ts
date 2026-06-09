@@ -22,17 +22,19 @@ export function mapRaiderIoError(status: number, body: unknown): AppError {
   if (status === 429) {
     return new AppError(
       "RAIDERIO_RATE_LIMIT",
-      "Raider.IO rate limit reached. Please try again shortly.",
+      "Достигнут лимит запросов Raider.IO. Попробуйте чуть позже.",
       429,
     );
   }
 
   const message = extractMessage(body);
 
+  // NOTE: these substrings match Raider.IO's own (English) response bodies —
+  // they must stay verbatim; only our user-facing messages are translated.
   if (message.includes("could not find requested character")) {
     return new AppError(
       "CHARACTER_NOT_FOUND",
-      "We couldn't find that character on Raider.IO.",
+      "Не удалось найти этого персонажа на Raider.IO.",
       404,
     );
   }
@@ -40,7 +42,7 @@ export function mapRaiderIoError(status: number, body: unknown): AppError {
   if (message.includes("failed to find realm")) {
     return new AppError(
       "REALM_NOT_FOUND",
-      "We couldn't find that realm on Raider.IO.",
+      "Не удалось найти этот сервер на Raider.IO.",
       404,
     );
   }
@@ -49,7 +51,7 @@ export function mapRaiderIoError(status: number, body: unknown): AppError {
   // any other 400 here is treated as an unexpected/malformed response.
   return new AppError(
     "EMPTY_OR_MALFORMED",
-    "Raider.IO returned an unexpected response.",
+    "Raider.IO вернул неожиданный ответ.",
     502,
   );
 }

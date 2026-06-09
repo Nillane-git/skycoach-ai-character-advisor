@@ -1,22 +1,22 @@
 export const SKYCOACH_CARDS = [
   {
-    title: "Progress Faster",
+    title: "Прогрессируй быстрее",
     description:
-      "Reduce the time required to reach your next progression milestone.",
-    cta: "Explore Options",
+      "Сократи время до следующего рубежа прогресса своего персонажа.",
+    cta: "Смотреть варианты",
     href: "#",
   },
   {
-    title: "Get Expert Guidance",
+    title: "Экспертное сопровождение",
     description:
-      "Work with experienced players to improve gameplay and decision making.",
-    cta: "Learn More",
+      "Играй с опытными игроками, чтобы прокачать геймплей и принятие решений.",
+    cta: "Подробнее",
     href: "#",
   },
   {
-    title: "Accelerate Character Growth",
-    description: "Save time and focus on the content you enjoy most.",
-    cta: "View Services",
+    title: "Ускорь рост персонажа",
+    description: "Экономь время и фокусируйся на контенте, который нравится.",
+    cta: "Услуги",
     href: "#",
   },
 ] as const;

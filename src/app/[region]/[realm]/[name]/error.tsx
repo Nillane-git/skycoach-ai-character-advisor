@@ -19,7 +19,7 @@ export default function CharacterError({
     <div className="flex flex-col items-center gap-6 py-16">
       <ErrorState code="UNKNOWN" />
       <Button variant="outline" onClick={() => reset()}>
-        Try again
+        Попробовать снова
       </Button>
     </div>
   );

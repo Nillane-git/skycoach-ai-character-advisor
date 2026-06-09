@@ -49,7 +49,7 @@ export function WelcomeModal() {
     >
       <button
         type="button"
-        aria-label="Close welcome"
+        aria-label="Закрыть приветствие"
         onClick={close}
         className="absolute inset-0 bg-black/75"
       />
@@ -61,7 +61,7 @@ export function WelcomeModal() {
         />
         <button
           type="button"
-          aria-label="Close"
+          aria-label="Закрыть"
           onClick={close}
           className="absolute right-3 top-3 rounded-md p-1 text-white/40 transition-colors hover:bg-white/10 hover:text-white"
         >
@@ -71,25 +71,26 @@ export function WelcomeModal() {
         <div className="relative p-6 sm:p-7">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-white/60">
             <Sparkles className="size-3.5 text-[var(--accent,#7C8CF8)]" aria-hidden="true" />
-            Test-task demo
+            Демо тестового задания
           </span>
 
           <h2
             id="welcome-title"
             className="mt-4 text-2xl font-semibold tracking-tight text-white"
           >
-            Welcome 👋
+            Привет 👋
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-white/70">
-            This is a demo of <strong className="text-white">SkyCoach AI Character Advisor</strong> — a
-            test assignment. Enter any World of Warcraft character and it pulls
-            live data from Raider.IO, then generates a progression report:
-            character score, readiness, strengths, bottlenecks, an action plan
-            and a roadmap.
+            Это демо{" "}
+            <strong className="text-white">SkyCoach AI Character Advisor</strong> —
+            тестовое задание. Введи любого персонажа World of Warcraft — сервис
+            подтянет данные из Raider.IO и сгенерирует отчёт о прогрессе: оценку
+            персонажа, готовность, сильные стороны, узкие места, план действий и
+            дорожную карту.
           </p>
           <p className="mt-3 text-xs leading-relaxed text-white/45">
-            Runs with zero configuration — the analysis engine works without any
-            API key. Try the demo character below, or type your own.
+            Работает без какой-либо настройки — движок анализа не требует
+            API-ключа. Попробуй демо-персонажа ниже или введи своего.
           </p>
 
           <div className="mt-6 flex flex-col gap-2 sm:flex-row">
@@ -98,10 +99,10 @@ export function WelcomeModal() {
               onClick={close}
               className={cn(buttonVariants(), "sm:flex-1")}
             >
-              Try the demo character
+              Попробовать демо-персонажа
             </Link>
             <Button variant="outline" onClick={close} className="sm:flex-1">
-              Explore on my own
+              Осмотреться самому
             </Button>
           </div>
         </div>
