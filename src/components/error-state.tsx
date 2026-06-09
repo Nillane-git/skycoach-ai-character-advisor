@@ -7,9 +7,11 @@ import {
   FileWarning,
   AlertTriangle,
   ArrowRight,
+  ExternalLink,
   type LucideIcon,
 } from "lucide-react";
 import type { ErrorCode } from "@/lib/errors";
+import { realmSlug, normalizeName } from "@/lib/raiderio/slug";
 import { buttonVariants } from "@/components/ui/button";
 
 interface Copy {
@@ -61,8 +63,55 @@ const COPY: Record<ErrorCode, Copy> = {
   },
 };
 
-export function ErrorState({ code }: { code: ErrorCode }) {
+// Errors that originate from the Raider.IO data source (not our own validation/
+// rate-limit). For these we can offer a "verify at the source" panel.
+const RAIDERIO_SOURCED: ReadonlySet<ErrorCode> = new Set<ErrorCode>([
+  "CHARACTER_NOT_FOUND",
+  "REALM_NOT_FOUND",
+  "EMPTY_OR_MALFORMED",
+  "RAIDERIO_UNAVAILABLE",
+  "RAIDERIO_RATE_LIMIT",
+]);
+
+// Mirrors src/lib/raiderio/client.ts so the link reproduces the EXACT request.
+const RAIDERIO_FIELDS =
+  "gear,mythic_plus_scores_by_season:current,mythic_plus_best_runs,raid_progression";
+
+interface ErrorStateProps {
+  code: ErrorCode;
+  region?: string;
+  realm?: string;
+  name?: string;
+}
+
+/**
+ * Builds the exact Raider.IO endpoints for the attempted character so a reviewer
+ * can confirm at the source whether "not found" is Raider.IO's answer or ours.
+ */
+function raiderioLinks(region: string, realm: string, name: string) {
+  const slug = realmSlug(realm);
+  const normName = normalizeName(name);
+  const api =
+    "https://raider.io/api/v1/characters/profile?" +
+    new URLSearchParams({
+      region,
+      realm: slug,
+      name: normName,
+      fields: RAIDERIO_FIELDS,
+    }).toString();
+  const page = `https://raider.io/characters/${region}/${slug}/${encodeURIComponent(
+    normName,
+  )}`;
+  return { api, page };
+}
+
+export function ErrorState({ code, region, realm, name }: ErrorStateProps) {
   const { icon: Icon, title, body } = COPY[code] ?? COPY.UNKNOWN;
+  const showVerify =
+    RAIDERIO_SOURCED.has(code) && !!region && !!realm && !!name;
+  const links = showVerify
+    ? raiderioLinks(region!, realm!, name!)
+    : null;
 
   return (
     <section className="mx-auto flex min-h-[60vh] w-full max-w-xl flex-col items-center justify-center px-4 py-16 text-center">
@@ -78,6 +127,40 @@ export function ErrorState({ code }: { code: ErrorCode }) {
       <code className="mt-4 rounded-md border border-white/10 bg-white/5 px-2 py-1 font-mono text-[11px] text-white/40">
         {code}
       </code>
+
+      {links ? (
+        <div className="mt-8 w-full rounded-xl border border-white/10 bg-white/[0.03] p-4 text-left">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-white/40">
+            Проверить источник
+          </p>
+          <p className="mt-1.5 text-sm leading-relaxed text-white/60">
+            Данные мы берём <strong>только из Raider.IO</strong> — своей базы
+            персонажей у нас нет. Открой эти ссылки и убедись сам: это ответ
+            Raider.IO, а не нашего сервиса.
+          </p>
+          <div className="mt-3 flex flex-col gap-2">
+            <a
+              href={links.page}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:underline"
+            >
+              <ExternalLink className="size-3.5" aria-hidden="true" />
+              Открыть персонажа на Raider.IO
+            </a>
+            <a
+              href={links.api}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 break-all text-sm font-medium text-[var(--accent)] hover:underline"
+            >
+              <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
+              Сырой ответ Raider.IO API (JSON) — тот самый запрос, что делаем мы
+            </a>
+          </div>
+        </div>
+      ) : null}
+
       <Link
         href="/"
         className={buttonVariants({ variant: "secondary", className: "mt-8" })}

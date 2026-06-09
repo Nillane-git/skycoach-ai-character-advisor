@@ -51,7 +51,14 @@ export default async function CharacterPage({ params }: PageProps) {
   }
 
   if (errorCode) {
-    return <ErrorState code={errorCode} />;
+    return (
+      <ErrorState
+        code={errorCode}
+        region={region}
+        realm={realm}
+        name={name}
+      />
+    );
   }
   return <Dashboard result={result!} />;
 }
