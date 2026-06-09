@@ -49,6 +49,8 @@ export function SkycoachCards({
               <CardFooter>
                 <a
                   href={fixed.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className={buttonVariants({
                     variant: "outline",
                     size: "sm",
