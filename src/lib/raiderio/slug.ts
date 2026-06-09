@@ -5,9 +5,12 @@ export function realmSlug(realm: string): string {
   return realm
     .trim()
     .toLowerCase()
-    .replace(/'/g, "") // strip apostrophes (no separator)
+    .replace(/['’]/g, "") // strip apostrophes (ASCII + curly), no separator
     .replace(/\s+/g, "-") // spaces -> single hyphen
-    .replace(/[^a-z0-9-]/g, "") // strip any remaining non [a-z0-9-]
+    // Keep letters (incl. non-Latin like Cyrillic for RU realms) & digits;
+    // drop only punctuation/symbols. Stripping non-ASCII here used to blank
+    // out RU realms entirely ("Гордунни" -> "") and silently swallow submit.
+    .replace(/[^\p{Letter}\p{Number}-]/gu, "")
     .replace(/-+/g, "-") // collapse runs of hyphens
     .replace(/^-+|-+$/g, ""); // trim leading/trailing hyphens
 }
