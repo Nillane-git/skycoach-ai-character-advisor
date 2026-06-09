@@ -13,7 +13,7 @@ export function Weaknesses({ weaknesses }: { weaknesses: string[] }) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <AlertCircle className="size-4 text-amber-400" aria-hidden="true" />
-          Areas to Improve
+          Зоны роста
         </CardTitle>
       </CardHeader>
       <CardContent>

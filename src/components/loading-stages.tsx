@@ -5,12 +5,12 @@ import { Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const STAGES = [
-  "Checking Character Profile...",
-  "Analyzing Equipment...",
-  "Analyzing Mythic+ Progress...",
-  "Analyzing Raid History...",
-  "Comparing Similar Players...",
-  "Generating AI Report...",
+  "Проверяем профиль персонажа...",
+  "Анализируем экипировку...",
+  "Анализируем прогресс Mythic+...",
+  "Анализируем историю рейдов...",
+  "Сравниваем с похожими игроками...",
+  "Генерируем AI-отчёт...",
 ] as const;
 
 const STEP_MS = 900;
@@ -34,10 +34,10 @@ export function LoadingStages() {
     <section className="mx-auto flex min-h-[60vh] w-full max-w-md flex-col justify-center px-4 py-16">
       <div className="mb-8 text-center">
         <h1 className="text-xl font-semibold tracking-tight text-white">
-          Building your report
+          Собираем твой отчёт
         </h1>
         <p className="mt-2 text-sm text-white/50">
-          Crunching gear, keys and raid logs into a plan.
+          Превращаем экипировку, ключи и рейд-логи в понятный план.
         </p>
       </div>
 

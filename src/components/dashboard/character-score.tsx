@@ -7,10 +7,10 @@ interface Band {
 }
 
 const BANDS: Band[] = [
-  { label: "Elite", min: 85, blurb: "Among the most progressed characters." },
-  { label: "Strong", min: 65, blurb: "Well-rounded and raid/key ready." },
-  { label: "Developing", min: 40, blurb: "Solid base with clear next steps." },
-  { label: "Early", min: 0, blurb: "Foundations are forming — keep pushing." },
+  { label: "Элита", min: 85, blurb: "Среди самых прокачанных персонажей." },
+  { label: "Сильный", min: 65, blurb: "Сбалансирован, готов к рейду и ключам." },
+  { label: "Развивается", min: 40, blurb: "Хорошая база с понятными шагами." },
+  { label: "Начало", min: 0, blurb: "База формируется — продолжай в том же духе." },
 ];
 
 function bandFor(score: number): Band {
@@ -24,7 +24,7 @@ export function CharacterScore({ score }: { score: number }) {
       <ScoreDial value={score} label={band.label} size={168} />
       <div className="text-center sm:text-left">
         <p className="text-xs font-medium uppercase tracking-wider text-white/40">
-          Overall character score
+          Общая оценка персонажа
         </p>
         <p className="mt-1 text-3xl font-semibold tracking-tight text-white">
           <span data-testid="character-score-value">{score}</span>

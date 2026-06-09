@@ -8,15 +8,14 @@ export default function NotFound() {
         404
       </p>
       <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-        We couldn&apos;t find that page
+        Страница не найдена
       </h1>
       <p className="max-w-md text-muted-foreground">
-        The page you&apos;re looking for doesn&apos;t exist or the character
-        region isn&apos;t supported. Try searching for a character from the
-        home page.
+        Такой страницы не существует или регион персонажа не поддерживается.
+        Попробуй найти персонажа на главной странице.
       </p>
       <Link href="/" className={buttonVariants({ variant: "default" })}>
-        Back to home
+        На главную
       </Link>
     </div>
   );

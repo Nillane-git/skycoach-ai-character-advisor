@@ -17,6 +17,9 @@
 /blob-report/
 /playwright/.cache/
 
+# deploy build artifacts
+/deploy/_bundle/
+
 # next.js
 /.next/
 /out/

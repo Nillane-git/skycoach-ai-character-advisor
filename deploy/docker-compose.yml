@@ -1,0 +1,50 @@
+# Isolated SkyCoach deployment — does NOT touch the host VPN stack.
+# - app:   Next.js standalone server (internal :3000, not published)
+# - caddy: TLS-terminating reverse proxy on the host's FREE :443, with fully
+#          automatic Let's Encrypt via TLS-ALPN-01 (host :80 is taken by the
+#          VPN's own nginx, so HTTP-01 is unavailable — ALPN on :443 is used).
+#
+# Own bridge network + own published port (:443) only. X-ray (:2087) and the
+# VPN nginx (:80) are untouched.
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: skycoach-app:latest
+    container_name: skycoach_app
+    environment:
+      - NODE_ENV=production
+      - DEMO_MODE=0
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    expose:
+      - "3000"
+    restart: unless-stopped
+    networks:
+      - skycoach
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: skycoach_caddy
+    depends_on:
+      - app
+    ports:
+      - "443:443"
+      - "443:443/udp" # HTTP/3
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data # persists issued certs across restarts (LE rate limits)
+      - caddy_config:/config
+    restart: unless-stopped
+    networks:
+      - skycoach
+
+networks:
+  skycoach:
+    name: skycoach_net
+
+volumes:
+  caddy_data:
+  caddy_config:

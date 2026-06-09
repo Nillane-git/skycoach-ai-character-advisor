@@ -4,10 +4,10 @@ export function SiteFooter() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-white/40 sm:flex-row">
         <p>
           <span className="font-medium text-white/60">SkyCoach AI</span> —
-          AI-powered World of Warcraft character analysis.
+          AI-анализ персонажа World of Warcraft.
         </p>
         <p>
-          Character data via{" "}
+          Данные персонажа через{" "}
           <a
             href="https://raider.io"
             target="_blank"
@@ -16,7 +16,7 @@ export function SiteFooter() {
           >
             Raider.IO
           </a>
-          . Not affiliated with Blizzard Entertainment.
+          . Не аффилировано с Blizzard Entertainment.
         </p>
       </div>
     </footer>

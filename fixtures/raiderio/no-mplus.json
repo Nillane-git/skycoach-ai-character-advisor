@@ -15,8 +15,8 @@
   "profile_banner": "hordebanner1",
   "gear": {
     "updated_at": "2026-06-07T10:15:00.000Z",
-    "item_level_equipped": 620,
-    "item_level_total": 622,
+    "item_level_equipped": 268,
+    "item_level_total": 270,
     "artifact_traits": 0
   },
   "mythic_plus_scores_by_season": [
@@ -33,10 +33,22 @@
         "spec_3": 0
       },
       "segments": {
-        "all": { "score": 0, "color": "#ffffff" },
-        "dps": { "score": 0, "color": "#ffffff" },
-        "healer": { "score": 0, "color": "#ffffff" },
-        "tank": { "score": 0, "color": "#ffffff" }
+        "all": {
+          "score": 0,
+          "color": "#ffffff"
+        },
+        "dps": {
+          "score": 0,
+          "color": "#ffffff"
+        },
+        "healer": {
+          "score": 0,
+          "color": "#ffffff"
+        },
+        "tank": {
+          "score": 0,
+          "color": "#ffffff"
+        }
       }
     }
   ],

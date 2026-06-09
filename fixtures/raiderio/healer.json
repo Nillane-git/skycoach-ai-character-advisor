@@ -15,17 +15,17 @@
   "profile_banner": "hordebanner1",
   "gear": {
     "updated_at": "2026-06-07T09:30:00.000Z",
-    "item_level_equipped": 631,
-    "item_level_total": 633,
+    "item_level_equipped": 282,
+    "item_level_total": 284,
     "artifact_traits": 0
   },
   "mythic_plus_scores_by_season": [
     {
       "season": "season-tww-3",
       "scores": {
-        "all": 2600,
+        "all": 2900,
         "dps": 120,
-        "healer": 2600,
+        "healer": 2900,
         "tank": 0,
         "spec_0": 2600,
         "spec_1": 0,
@@ -33,10 +33,22 @@
         "spec_3": 0
       },
       "segments": {
-        "all": { "score": 2600, "color": "#ff8000" },
-        "dps": { "score": 120, "color": "#1eff00" },
-        "healer": { "score": 2600, "color": "#ff8000" },
-        "tank": { "score": 0, "color": "#ffffff" }
+        "all": {
+          "score": 2600,
+          "color": "#ff8000"
+        },
+        "dps": {
+          "score": 120,
+          "color": "#1eff00"
+        },
+        "healer": {
+          "score": 2600,
+          "color": "#ff8000"
+        },
+        "tank": {
+          "score": 0,
+          "color": "#ffffff"
+        }
       }
     }
   ],
@@ -79,7 +91,7 @@
       "num_keystone_upgrades": 1,
       "map_challenge_mode_id": 505,
       "zone_id": 14882,
-      "score": 327.0,
+      "score": 327,
       "affixes": [],
       "url": "https://raider.io/mythic-plus-runs/season-tww-3/3-cityofthreads"
     },

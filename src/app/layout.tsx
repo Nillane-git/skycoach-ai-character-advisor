@@ -6,7 +6,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 const geistMono = Geist_Mono({
@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SkyCoach AI — Understand Your WoW Character",
+  title: "SkyCoach AI — Разбор твоего WoW-персонажа",
   description:
-    "AI-powered analysis of gear progression, Mythic+, raid readiness and next steps for your World of Warcraft character.",
+    "AI-анализ прогресса экипировки, Mythic+, готовности к рейду и следующих шагов для твоего персонажа World of Warcraft.",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ru"
       className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col font-sans">

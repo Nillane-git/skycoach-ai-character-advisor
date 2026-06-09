@@ -16,7 +16,7 @@ export function Bottlenecks({ bottlenecks }: { bottlenecks: Bottleneck[] }) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <TrendingDown className="size-4 text-[var(--accent)]" aria-hidden="true" />
-          Progression Bottlenecks
+          Узкие места прогресса
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">

@@ -28,10 +28,10 @@ export function makeCharacter(
       thumbnailUrl: null,
       profileUrl: null,
     },
-    itemLevel: { equipped: 609.5, total: 612 },
+    itemLevel: { equipped: 255, total: 258 },
     mythicPlus: {
-      ratingAll: 1500,
-      ratingByRole: 1500,
+      ratingAll: 1750,
+      ratingByRole: 1750,
       bestRuns: [],
       distinctDungeonsAtOrAbove10: 4,
     },
@@ -86,10 +86,10 @@ export function makeZeroCharacter(): NormalizedCharacter {
 /** A maxed "full BiS mythic raider" — every sub-metric pinned at its cap. */
 export function makeMaxCharacter(): NormalizedCharacter {
   return makeCharacter({
-    itemLevel: { equipped: 639, total: 639 },
+    itemLevel: { equipped: 290, total: 290 },
     mythicPlus: {
-      ratingAll: 3000,
-      ratingByRole: 3000,
+      ratingAll: 3500,
+      ratingByRole: 3500,
       bestRuns: [],
       distinctDungeonsAtOrAbove10: 8,
     },

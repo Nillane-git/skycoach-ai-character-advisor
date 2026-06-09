@@ -13,7 +13,7 @@ export function Strengths({ strengths }: { strengths: string[] }) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <CheckCircle2 className="size-4 text-emerald-400" aria-hidden="true" />
-          Strengths
+          Сильные стороны
         </CardTitle>
       </CardHeader>
       <CardContent>

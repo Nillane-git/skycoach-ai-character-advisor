@@ -5,8 +5,8 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     environment: "node",
-    // Unit tests only — e2e is driven by Playwright, not Vitest.
-    include: ["tests/unit/**/*.test.ts"],
+    // Unit + integration tests — e2e is driven by Playwright, not Vitest.
+    include: ["tests/{unit,integration}/**/*.test.ts"],
   },
   resolve: {
     alias: {

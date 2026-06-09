@@ -20,32 +20,32 @@ export function StatBreakdown({
   const stats: { icon: typeof Shirt; label: string; value: string }[] = [
     {
       icon: Shirt,
-      label: "Item Level",
-      value: `${itemLevel.equipped} eq · ${itemLevel.total} max`,
+      label: "Уровень предметов",
+      value: `${itemLevel.equipped} над · ${itemLevel.total} макс`,
     },
     {
       icon: Gauge,
-      label: "Mythic+ Rating",
-      value: mythicPlus.ratingByRole.toLocaleString("en-US"),
+      label: "Рейтинг Mythic+",
+      value: mythicPlus.ratingByRole.toLocaleString("ru-RU"),
     },
     {
       icon: ShieldHalf,
-      label: "Raid Progress",
+      label: "Прогресс рейда",
       value: currentRaid
         ? `${currentRaid.name} · ${currentRaid.summary}`
-        : "No raid progress",
+        : "Нет прогресса рейда",
     },
     {
       icon: Compass,
-      label: "Dungeon Coverage",
-      value: `${mythicPlus.distinctDungeonsAtOrAbove10}/${poolSize} at +10`,
+      label: "Охват подземелий",
+      value: `${mythicPlus.distinctDungeonsAtOrAbove10}/${poolSize} на +10`,
     },
   ];
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Stat Breakdown</CardTitle>
+        <CardTitle>Разбор показателей</CardTitle>
       </CardHeader>
       <CardContent>
         <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">

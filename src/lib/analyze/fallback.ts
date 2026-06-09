@@ -1,4 +1,4 @@
-import type { NormalizedCharacter } from "@/types/character";
+import type { NormalizedCharacter, Role } from "@/types/character";
 import type {
   Analysis,
   Bottleneck,
@@ -26,6 +26,14 @@ interface MetricView {
   norm: number;
 }
 
+// Russian role label used inside generated prose.
+const ROLE_RU: Record<Role, string> = {
+  DPS: "ДД",
+  HEALER: "хилер",
+  TANK: "танк",
+};
+const roleRu = (role: Role) => ROLE_RU[role] ?? "игрок";
+
 function buildMetrics(c: NormalizedCharacter): Record<MetricKey, MetricView> {
   const raid = c.currentRaid;
   const ilvlNorm = normItemLevel(c.itemLevel.equipped);
@@ -43,12 +51,12 @@ function buildMetrics(c: NormalizedCharacter): Record<MetricKey, MetricView> {
   );
 
   return {
-    itemLevel: { key: "itemLevel", label: "Item Level", norm: ilvlNorm },
+    itemLevel: { key: "itemLevel", label: "Уровень предметов", norm: ilvlNorm },
     mythicPlus: { key: "mythicPlus", label: "Mythic+", norm: mplusNorm },
-    raid: { key: "raid", label: "Raid Progression", norm: raidNorm },
+    raid: { key: "raid", label: "Рейд", norm: raidNorm },
     dungeons: {
       key: "dungeons",
-      label: "Dungeon Coverage",
+      label: "Охват подземелий",
       norm: coverageNorm,
     },
   };
@@ -82,12 +90,12 @@ function buildStrengths(
 
   if (m.itemLevel.norm >= 80) {
     out.push(
-      `Strong gear foundation at ${c.itemLevel.equipped} equipped item level.`,
+      `Прочная база экипировки — ${c.itemLevel.equipped} ilvl надетого.`,
     );
   }
   if (m.mythicPlus.norm >= 70) {
     out.push(
-      `Competitive Mythic+ rating of ${c.mythicPlus.ratingByRole} for your role.`,
+      `Конкурентный рейтинг Mythic+ (${c.mythicPlus.ratingByRole}) для твоей роли.`,
     );
   }
   if (c.currentRaid) {
@@ -97,13 +105,13 @@ function buildStrengths(
         : 0;
     if (heroicProgress >= 75) {
       out.push(
-        `Deep Heroic raid progress (${c.currentRaid.summary}) in ${c.currentRaid.name}.`,
+        `Хороший прогресс героика (${c.currentRaid.summary}) в «${c.currentRaid.name}».`,
       );
     }
   }
   if (m.dungeons.norm >= 75) {
     out.push(
-      `Broad dungeon coverage with ${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize} dungeons at +${SCORING.dungeons.keystoneFloor} or higher.`,
+      `Широкий охват подземелий: ${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize} на +${SCORING.dungeons.keystoneFloor} и выше.`,
     );
   }
 
@@ -112,13 +120,13 @@ function buildStrengths(
   const ordered = weakestFirst(m);
   const strongest = ordered[ordered.length - 1];
   out.push(
-    `${strongest.label} is your strongest area and the best base to build momentum from.`,
+    `${strongest.label} — твоя сильнейшая зона и лучшая база для набора темпа.`,
   );
   out.push(
-    `Clear ${c.identity.role} role identity to focus every upgrade decision.`,
+    `Чёткая роль (${roleRu(c.identity.role)}) — есть вокруг чего выстраивать апгрейды.`,
   );
   out.push(
-    "A solid baseline to convert into rating and gear with focused weekly play.",
+    "Хорошая стартовая база, чтобы конвертировать в рейтинг и экипировку при фокусной игре.",
   );
 
   // De-duplicate while preserving order (relevant items come first).
@@ -133,22 +141,22 @@ function buildWeaknesses(
   const ordered = weakestFirst(m); // weakest metric first
 
   const lowText: Record<MetricKey, string> = {
-    itemLevel: `Item level (${c.itemLevel.equipped}) is below the band needed for current content.`,
-    mythicPlus: `Mythic+ rating (${c.mythicPlus.ratingByRole}) trails the season target.`,
+    itemLevel: `Уровень предметов (${c.itemLevel.equipped}) ниже планки для актуального контента.`,
+    mythicPlus: `Рейтинг Mythic+ (${c.mythicPlus.ratingByRole}) отстаёт от сезонной цели.`,
     raid:
       c.currentRaid && c.currentRaid.summary
-        ? `Raid progression (${c.currentRaid.summary}) is still early this tier.`
-        : "Raid progression has yet to begin this tier.",
-    dungeons: `Limited dungeon coverage (${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize}) leaves rating on the table.`,
+        ? `Прогресс рейда (${c.currentRaid.summary}) пока в самом начале сезона.`
+        : "Прогресс рейда в этом сезоне ещё не начат.",
+    dungeons: `Малый охват подземелий (${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize}) — рейтинг недобирается.`,
   };
   const roomText: Record<MetricKey, string> = {
-    itemLevel: `Item level (${c.itemLevel.equipped}) still has upgrades left toward the ${SCORING.itemLevel.cap} ceiling.`,
-    mythicPlus: `Mythic+ rating (${c.mythicPlus.ratingByRole}) has room to climb toward the ${SCORING.mythicPlus.cap} ceiling.`,
+    itemLevel: `У уровня предметов (${c.itemLevel.equipped}) ещё есть апгрейды до потолка ${SCORING.itemLevel.cap}.`,
+    mythicPlus: `Рейтинг Mythic+ (${c.mythicPlus.ratingByRole}) ещё может расти к потолку ${SCORING.mythicPlus.cap}.`,
     raid:
       c.currentRaid && c.currentRaid.summary
-        ? `Raid progression (${c.currentRaid.summary}) still has bosses left on higher difficulty.`
-        : "Raid progression has yet to begin this tier.",
-    dungeons: `Dungeon coverage (${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize}) is not yet complete at +${SCORING.dungeons.keystoneFloor}.`,
+        ? `В прогрессе рейда (${c.currentRaid.summary}) остались боссы на более высокой сложности.`
+        : "Прогресс рейда в этом сезоне ещё не начат.",
+    dungeons: `Охват подземелий (${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize}) ещё не полный на +${SCORING.dungeons.keystoneFloor}.`,
   };
 
   // A metric is a "weakness" if it is not maxed: hard language when low,
@@ -159,23 +167,23 @@ function buildWeaknesses(
   }
 
   if (!c.currentRaid) {
-    out.push("No Mythic raid kills yet this tier.");
+    out.push("Убийств боссов в мифик-рейде в этом сезоне пока нет.");
   } else if (c.currentRaid.mythicKilled < c.currentRaid.totalBosses) {
     out.push(
-      `Mythic raid is not yet cleared (${c.currentRaid.mythicKilled}/${c.currentRaid.totalBosses} M).`,
+      `Мифик-рейд ещё не закрыт (${c.currentRaid.mythicKilled}/${c.currentRaid.totalBosses} М).`,
     );
   }
 
   // Always-available growth notes guarantee at least three distinct items even
   // for a near-best-in-slot character whose metrics are all maxed.
   out.push(
-    `As a ${c.identity.role}, consistency under pressure is the next gain once the numbers peak.`,
+    `Как ${roleRu(c.identity.role)}, следующий рост — стабильность под давлением, когда цифры уже на пике.`,
   );
   out.push(
-    "Pushing into title-range Mythic+ and full Mythic clears is what now separates from the pack.",
+    "Выход в title-рейндж Mythic+ и полные мифик-килы — вот что отделяет от общей массы.",
   );
   out.push(
-    "Holding peak gear, rating, and clears week over week is the real challenge from here.",
+    "Держать пиковую экипировку, рейтинг и килы из недели в неделю — вот настоящий вызов дальше.",
   );
 
   // De-duplicate while preserving weakest-first order.
@@ -190,19 +198,19 @@ function buildBottlenecks(
   const ordered = weakestFirst(m);
 
   const explain: Record<MetricKey, string> = {
-    itemLevel: `Gear at ${c.itemLevel.equipped} ilvl caps the difficulty you can reliably clear, gating both Mythic+ keys and raid bosses.`,
-    mythicPlus: `A Mythic+ rating of ${c.mythicPlus.ratingByRole} limits the keystone level you can push, slowing both score and gear gains.`,
+    itemLevel: `Экипировка на ${c.itemLevel.equipped} ilvl ограничивает сложность, которую стабильно закрываешь, — упираются и ключи Mythic+, и боссы рейда.`,
+    mythicPlus: `Рейтинг Mythic+ (${c.mythicPlus.ratingByRole}) ограничивает уровень ключей, который тянешь, тормозя и рейтинг, и добычу экипировки.`,
     raid: c.currentRaid
-      ? `Raid progress (${c.currentRaid.summary}) lags, so higher-difficulty bosses and their gear remain out of reach.`
-      : `No active raid progress means a full source of upgrades and score is untapped.`,
-    dungeons: `Only ${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize} dungeons cleared at +${SCORING.dungeons.keystoneFloor} leaves easy rating and weekly rewards unclaimed.`,
+      ? `Прогресс рейда (${c.currentRaid.summary}) отстаёт, поэтому боссы на высокой сложности и их лут пока недоступны.`
+      : `Без активного прогресса рейда не задействован целый источник апгрейдов и рейтинга.`,
+    dungeons: `Лишь ${c.mythicPlus.distinctDungeonsAtOrAbove10}/${SCORING.dungeons.poolSize} подземелий пройдено на +${SCORING.dungeons.keystoneFloor} — лёгкий рейтинг и недельные награды не получены.`,
   };
 
   const titleByKey: Record<MetricKey, string> = {
-    itemLevel: "Gear Below Content Threshold",
-    mythicPlus: "Mythic+ Rating Plateau",
-    raid: "Stalled Raid Progression",
-    dungeons: "Incomplete Dungeon Coverage",
+    itemLevel: "Экипировка ниже планки контента",
+    mythicPlus: "Плато рейтинга Mythic+",
+    raid: "Застопорившийся прогресс рейда",
+    dungeons: "Неполный охват подземелий",
   };
 
   return ordered.slice(0, 3).map((metric) => ({
@@ -218,25 +226,25 @@ function buildActionPlan(
   const ordered = weakestFirst(m);
 
   const stepByKey: Record<MetricKey, string> = {
-    itemLevel: `Target gear upgrades to push past ${c.itemLevel.equipped} equipped item level via the highest-difficulty content you can clear.`,
-    mythicPlus: `Push Mythic+ keys above your current rating of ${c.mythicPlus.ratingByRole} to climb the score curve.`,
+    itemLevel: `Подними уровень предметов выше ${c.itemLevel.equipped}, фармя самый сложный контент, который стабильно закрываешь.`,
+    mythicPlus: `Тайми ключи Mythic+ выше текущего рейтинга ${c.mythicPlus.ratingByRole}, чтобы лезть вверх по кривой рейтинга.`,
     raid: c.currentRaid
-      ? `Convert ${c.currentRaid.summary} into deeper kills on the next raid difficulty in ${c.currentRaid.name}.`
-      : "Begin raiding the current tier to open a new source of gear and score.",
-    dungeons: `Complete ${Math.max(
+      ? `Преврати ${c.currentRaid.summary} в килы на следующей сложности рейда «${c.currentRaid.name}».`
+      : "Начни рейд текущего сезона — это новый источник экипировки и рейтинга.",
+    dungeons: `Пройди ещё ${Math.max(
       0,
       SCORING.dungeons.poolSize - c.mythicPlus.distinctDungeonsAtOrAbove10,
-    )} more +${SCORING.dungeons.keystoneFloor} dungeons for full ${SCORING.dungeons.poolSize}/${SCORING.dungeons.poolSize} coverage.`,
+    )} подземелий на +${SCORING.dungeons.keystoneFloor} для полного охвата ${SCORING.dungeons.poolSize}/${SCORING.dungeons.poolSize}.`,
   };
 
   const out = ordered.map((metric) => stepByKey[metric.key]);
 
   // Stable closing steps to guarantee the 4-6 floor with concrete actions.
   out.push(
-    `Maintain your weekly Mythic+ vault by running keys across multiple dungeons.`,
+    "Закрывай недельный сейф Mythic+, прогоняя ключи по разным подземельям.",
   );
   out.push(
-    `Re-run this analysis after your next gear or rating jump to re-prioritize.`,
+    "Перезапусти этот анализ после следующего скачка экипировки или рейтинга, чтобы пересобрать приоритеты.",
   );
 
   return out;
@@ -247,22 +255,22 @@ function buildRoadmap(
   m: Record<MetricKey, MetricView>,
 ): RoadmapStep[] {
   const ordered = weakestFirst(m);
-  const phases = ["This week", "Next 2 weeks", "This tier"];
+  const phases = ["На этой неделе", "Ближайшие 2 недели", "В этом сезоне"];
 
   const detailByKey: Record<MetricKey, string> = {
-    itemLevel: `Funnel every upgrade toward raising equipped item level from ${c.itemLevel.equipped}.`,
-    mythicPlus: `Time keys above your ${c.mythicPlus.ratingByRole} rating to bank score and gear.`,
+    itemLevel: `Направляй каждый апгрейд на рост уровня предметов с ${c.itemLevel.equipped}.`,
+    mythicPlus: `Тайми ключи выше рейтинга ${c.mythicPlus.ratingByRole}, копя рейтинг и экипировку.`,
     raid: c.currentRaid
-      ? `Extend ${c.currentRaid.name} progress beyond ${c.currentRaid.summary}.`
-      : "Start the current raid tier for fresh upgrades.",
-    dungeons: `Fill out dungeon coverage toward ${SCORING.dungeons.poolSize}/${SCORING.dungeons.poolSize} at +${SCORING.dungeons.keystoneFloor}.`,
+      ? `Продвинь прогресс «${c.currentRaid.name}» дальше ${c.currentRaid.summary}.`
+      : "Начни рейд текущего сезона ради свежих апгрейдов.",
+    dungeons: `Добери охват подземелий до ${SCORING.dungeons.poolSize}/${SCORING.dungeons.poolSize} на +${SCORING.dungeons.keystoneFloor}.`,
   };
 
   const titleByKey: Record<MetricKey, string> = {
-    itemLevel: "Raise Item Level",
-    mythicPlus: "Push Mythic+ Score",
-    raid: "Advance Raid Progress",
-    dungeons: "Complete Dungeon Coverage",
+    itemLevel: "Поднять уровень предметов",
+    mythicPlus: "Поднять рейтинг Mythic+",
+    raid: "Продвинуть прогресс рейда",
+    dungeons: "Закрыть охват подземелий",
   };
 
   // Three phased steps from the three weakest metrics (stable order).
@@ -282,24 +290,24 @@ function buildSuggestions(
   // fixed (taken verbatim from the canonical cards).
   const descByWeakest: Record<MetricKey, [string, string, string]> = {
     itemLevel: [
-      "Reach your next item-level milestone faster with targeted gear runs.",
-      "Get expert guidance on which content yields the gear you still need.",
-      "Accelerate gearing so you spend less time grinding and more time progressing.",
+      "Быстрее доберись до следующего рубежа по уровню предметов с точечными фармами.",
+      "Получи экспертный разбор, какой контент даёт нужную тебе экипировку.",
+      "Ускорь прокачку экипировки — меньше гринда, больше прогресса.",
     ],
     mythicPlus: [
-      "Progress faster by pushing higher keys with a coordinated group.",
-      "Get expert guidance on routing, pulls, and key-level decision making.",
-      "Accelerate your Mythic+ score growth and reclaim your weekly vault.",
+      "Прогрессируй быстрее, пушая высокие ключи в слаженной группе.",
+      "Экспертный разбор маршрутов, пуллов и решений по уровню ключа.",
+      "Ускорь рост рейтинга Mythic+ и верни свой недельный сейф.",
     ],
     raid: [
-      "Progress faster toward your next raid difficulty milestone.",
-      "Get expert guidance on boss strategy and raid decision making.",
-      "Accelerate raid progression so the tier's gear opens up sooner.",
+      "Быстрее дойди до следующего рубежа сложности рейда.",
+      "Экспертный разбор тактик боссов и решений в рейде.",
+      "Ускорь прогресс рейда — лут сезона откроется раньше.",
     ],
     dungeons: [
-      "Progress faster by closing out your remaining dungeon coverage.",
-      "Get expert guidance on the most efficient dungeons to round out coverage.",
-      "Accelerate full dungeon coverage and the rating it unlocks.",
+      "Прогрессируй быстрее, закрыв оставшийся охват подземелий.",
+      "Экспертный разбор, какие подземелья эффективнее для полного охвата.",
+      "Ускорь полный охват подземелий и рейтинг, который он открывает.",
     ],
   };
 

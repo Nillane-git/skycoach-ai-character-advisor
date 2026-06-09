@@ -18,21 +18,21 @@ interface ReadinessItem {
 const ITEMS: ReadinessItem[] = [
   {
     key: "mythicPlus",
-    label: "Mythic+ Readiness",
+    label: "Готовность к Mythic+",
     icon: Swords,
-    hint: "Keystone pushing strength",
+    hint: "Сила пуша ключей",
   },
   {
     key: "heroicRaid",
-    label: "Heroic Raid",
+    label: "Героик-рейд",
     icon: ShieldHalf,
-    hint: "Gear & progress vs heroic",
+    hint: "Экипировка и прогресс под героик",
   },
   {
     key: "mythicRaid",
-    label: "Mythic Raid",
+    label: "Мифик-рейд",
     icon: Crown,
-    hint: "Gear & progress vs mythic",
+    hint: "Экипировка и прогресс под мифик",
   },
 ];
 

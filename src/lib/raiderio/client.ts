@@ -41,7 +41,7 @@ export async function fetchCharacter({
     // network failure, DNS, or 10s abort/timeout
     throw new AppError(
       "RAIDERIO_UNAVAILABLE",
-      "Raider.IO is currently unreachable. Please try again.",
+      "Raider.IO сейчас недоступен. Попробуйте ещё раз.",
       503,
     );
   }
@@ -51,7 +51,7 @@ export async function fetchCharacter({
     if (res.status >= 500) {
       throw new AppError(
         "RAIDERIO_UNAVAILABLE",
-        "Raider.IO is currently unreachable. Please try again.",
+        "Raider.IO сейчас недоступен. Попробуйте ещё раз.",
         503,
       );
     }
@@ -70,7 +70,7 @@ export async function fetchCharacter({
   } catch {
     throw new AppError(
       "EMPTY_OR_MALFORMED",
-      "Raider.IO returned an unreadable response.",
+      "Raider.IO вернул нечитаемый ответ.",
       502,
     );
   }
