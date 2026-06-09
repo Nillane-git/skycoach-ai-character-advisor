@@ -2,13 +2,13 @@ import { test, expect } from "@playwright/test";
 
 // These run against `DEMO_MODE=1 npm run dev` (see playwright.config.ts), so
 // the demo character resolves from the local fixture and — because CI has no
-// ANTHROPIC_API_KEY — the deterministic fallback report is rendered.
+// ANTHROPIC_API_KEY — the deterministic fallback report is rendered. The UI is
+// in Russian.
 
 test.describe("demo dashboard", () => {
   test("renders the full analysis for the demo character", async ({ page }) => {
     await page.goto("/us/demo/skycoach");
 
-    // --- the eight analysis sections (assert by their stable headings) ---
     // Character header: the demo character's name is present.
     await expect(
       page.getByRole("heading", { name: /skycoach/i }).first(),
@@ -22,54 +22,62 @@ test.describe("demo dashboard", () => {
     expect(score).toBeGreaterThanOrEqual(0);
     expect(score).toBeLessThanOrEqual(100);
 
-    // The remaining seven analysis section headings.
+    // The analysis section headings (Russian).
     const sectionHeadings = [
-      /readiness/i,
-      /strength/i,
-      /areas to improve|weakness/i,
-      /bottleneck/i,
-      /action plan/i,
-      /roadmap/i,
-      /skycoach|accelerate|services/i,
+      /Общая оценка персонажа/i,
+      /Готовность/i,
+      /Сильные стороны/i,
+      /Зоны роста/i,
+      /Узкие места/i,
+      /План действий/i,
+      /Дорожная карта/i,
+      /Разбор показателей/i,
+      /Ускорься со SkyCoach/i,
     ];
     for (const name of sectionHeadings) {
       await expect(page.getByText(name).first()).toBeVisible();
     }
 
-    // --- three readiness cards: Mythic+, Heroic Raid, Mythic Raid ---
-    await expect(page.getByText(/mythic\+/i).first()).toBeVisible();
-    await expect(page.getByText(/heroic raid/i).first()).toBeVisible();
-    await expect(page.getByText(/mythic raid/i).first()).toBeVisible();
+    // Three readiness cards: Mythic+, Heroic raid, Mythic raid.
+    await expect(page.getByText(/Mythic\+/).first()).toBeVisible();
+    await expect(page.getByText(/Героик-рейд/i).first()).toBeVisible();
+    await expect(page.getByText(/Мифик-рейд/i).first()).toBeVisible();
 
-    // --- the three fixed SkyCoach suggestion cards (titles + CTAs) ---
-    await expect(page.getByText("Progress Faster").first()).toBeVisible();
-    await expect(page.getByText("Get Expert Guidance").first()).toBeVisible();
-    await expect(
-      page.getByText("Accelerate Character Growth").first(),
-    ).toBeVisible();
-    await expect(page.getByText("Explore Options").first()).toBeVisible();
-    await expect(page.getByText("Learn More").first()).toBeVisible();
-    await expect(page.getByText("View Services").first()).toBeVisible();
+    // The three fixed SkyCoach suggestion cards (titles + CTAs), Russian.
+    await expect(page.getByText("Прогрессируй быстрее").first()).toBeVisible();
+    await expect(page.getByText("Экспертное сопровождение").first()).toBeVisible();
+    await expect(page.getByText("Ускорь рост персонажа").first()).toBeVisible();
+    await expect(page.getByText("Смотреть варианты").first()).toBeVisible();
+    await expect(page.getByText("Подробнее").first()).toBeVisible();
+    await expect(page.getByText("Услуги").first()).toBeVisible();
 
-    // --- fallback banner: by design it appears ONLY when a key was configured
-    // but the Claude call failed (meta.keyExpected). With no ANTHROPIC_API_KEY
-    // the deterministic report is the expected path, so the banner stays hidden
-    // and the reviewer sees a clean dashboard. ---
-    await expect(page.getByText(/deterministic report/i)).toHaveCount(0);
+    // Fallback banner: hidden when no key is configured (deterministic is the
+    // expected path), so the reviewer sees a clean dashboard.
+    await expect(page.getByText(/детерминированный отчёт/i)).toHaveCount(0);
   });
 });
 
 test.describe("home page", () => {
-  test("renders the search form", async ({ page }) => {
+  test("shows the Russian welcome modal, then the search form", async ({ page }) => {
     await page.goto("/");
 
-    // The hero headline.
+    // Welcome modal (client-rendered) appears on first visit.
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(page.getByText(/Демо тестового задания/i)).toBeVisible();
     await expect(
-      page.getByText(/understand your wow character/i).first(),
+      page.getByRole("link", { name: /Попробовать демо-персонажа/i }).first(),
     ).toBeVisible();
 
-    // The search form: a region selector plus realm + name inputs.
+    // Dismiss it and check the hero + search form underneath.
+    await page.getByRole("button", { name: /Осмотреться/i }).click();
+    await expect(dialog).toHaveCount(0);
+
+    await expect(page.getByText(/Разбери своего WoW/i).first()).toBeVisible();
     await expect(page.locator("select").first()).toBeVisible();
     await expect(page.locator("input").first()).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: /Анализировать/i }),
+    ).toBeVisible();
   });
 });

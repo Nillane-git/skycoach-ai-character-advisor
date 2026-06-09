@@ -17,15 +17,15 @@ describe("characterScore", () => {
   });
 
   it("matches a hand-computed mid character", () => {
-    // ilvl 609.5 -> 50, mplus 1500 -> 50, raid 8 heroic of 8 -> 66.67,
+    // ilvl 255 -> 50, mplus 1750 -> 50, raid 8 heroic of 8 -> 66.67,
     // coverage 4/8 -> 50.
     // 50*0.40 + 50*0.30 + 66.67*0.20 + 50*0.10
     //  = 20 + 15 + 13.33 + 5 = 53.33 -> round 53
     const c = makeCharacter({
-      itemLevel: { equipped: 609.5, total: 612 },
+      itemLevel: { equipped: 255, total: 258 },
       mythicPlus: {
-        ratingAll: 1500,
-        ratingByRole: 1500,
+        ratingAll: 1750,
+        ratingByRole: 1750,
         bestRuns: [],
         distinctDungeonsAtOrAbove10: 4,
       },
@@ -38,10 +38,10 @@ describe("characterScore", () => {
     // Same as mid but with no raid: raid term drops from 13.33 to 0.
     // 50*0.40 + 50*0.30 + 0 + 50*0.10 = 20 + 15 + 0 + 5 = 40
     const c = makeCharacter({
-      itemLevel: { equipped: 609.5, total: 612 },
+      itemLevel: { equipped: 255, total: 258 },
       mythicPlus: {
-        ratingAll: 1500,
-        ratingByRole: 1500,
+        ratingAll: 1750,
+        ratingByRole: 1750,
         bestRuns: [],
         distinctDungeonsAtOrAbove10: 4,
       },

@@ -6,7 +6,12 @@ export function Hero() {
     <section className="relative mx-auto w-full max-w-3xl px-4 py-16 sm:py-24">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 -z-10 mx-auto h-64 max-w-2xl rounded-full bg-[var(--accent)]/15 blur-3xl"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 mx-auto h-64 max-w-2xl"
+        style={{
+          // Radial-gradient glow instead of `filter: blur` — same look, GPU-cheap.
+          background:
+            "radial-gradient(50% 60% at 50% 25%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%)",
+        }}
       />
 
       <div className="flex flex-col items-center text-center">

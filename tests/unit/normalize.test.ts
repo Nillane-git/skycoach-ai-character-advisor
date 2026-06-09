@@ -7,8 +7,8 @@ import {
   normDungeonCoverage,
 } from "@/lib/scoring/normalize";
 
-// Season ceilings (from src/config/scoring.ts): ilvl floor 580 / cap 639,
-// mplus cap 3000, dungeon poolSize 8, raid weights 1/2/3.
+// Season ceilings (from src/config/scoring.ts): ilvl floor 220 / cap 290,
+// mplus cap 3500, dungeon poolSize 8, raid weights 1/2/3.
 
 describe("clamp", () => {
   it("clamps into the default 0-100 band", () => {
@@ -24,27 +24,27 @@ describe("clamp", () => {
 
 describe("normItemLevel", () => {
   it("floors at and below the season floor", () => {
-    expect(normItemLevel(575)).toBe(0);
-    expect(normItemLevel(580)).toBe(0);
+    expect(normItemLevel(215)).toBe(0);
+    expect(normItemLevel(220)).toBe(0);
   });
 
   it("hits the midpoint at the half-span ilvl", () => {
-    // (609.5 - 580) / (639 - 580) * 100 = 50
-    expect(normItemLevel(609.5)).toBeCloseTo(50, 5);
+    // (255 - 220) / (290 - 220) * 100 = 50
+    expect(normItemLevel(255)).toBeCloseTo(50, 5);
   });
 
   it("caps at and above the season cap", () => {
-    expect(normItemLevel(639)).toBe(100);
-    expect(normItemLevel(650)).toBe(100);
+    expect(normItemLevel(290)).toBe(100);
+    expect(normItemLevel(300)).toBe(100);
   });
 });
 
 describe("normMythicPlus", () => {
   it("maps rating linearly against the cap and clamps", () => {
     expect(normMythicPlus(0)).toBe(0);
-    expect(normMythicPlus(1500)).toBe(50);
-    expect(normMythicPlus(3000)).toBe(100);
+    expect(normMythicPlus(1750)).toBe(50);
     expect(normMythicPlus(3500)).toBe(100);
+    expect(normMythicPlus(4000)).toBe(100);
   });
 });
 

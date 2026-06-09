@@ -39,7 +39,7 @@ export function SearchForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="w-full rounded-2xl border border-white/10 bg-white/[0.03] p-4 shadow-lg backdrop-blur-sm sm:p-5"
+      className="w-full rounded-2xl border border-white/10 bg-white/[0.03] p-4 shadow-lg sm:p-5"
     >
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-[7rem_1fr_1fr]">
         <div className="space-y-1.5">

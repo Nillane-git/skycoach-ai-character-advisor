@@ -11,6 +11,12 @@ export default defineConfig({
   expect: { timeout: 10000 },
   use: {
     baseURL: BASE_URL,
+    // Standard flags for CI / containerised chromium: avoid the small default
+    // /dev/shm (a common cause of renderer crashes in sandboxes) and the OS
+    // sandbox that isn't available there.
+    launchOptions: {
+      args: ["--disable-dev-shm-usage", "--no-sandbox"],
+    },
   },
   // Boot the app in offline demo mode so e2e never needs a network call or
   // an API key — the deterministic fallback report is asserted in CI.

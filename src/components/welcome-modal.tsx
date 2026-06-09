@@ -54,11 +54,15 @@ export function WelcomeModal() {
         className="absolute inset-0 bg-black/75"
       />
 
-      <div className="relative w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#14171c] shadow-2xl">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-16 left-1/2 h-40 w-72 -translate-x-1/2 rounded-full bg-[var(--accent,#7C8CF8)]/20 blur-2xl"
-        />
+      <div
+        className="relative w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#14171c] shadow-2xl"
+        style={{
+          // Soft accent glow via a radial gradient (no `filter: blur`, which is
+          // GPU-cheap and avoids software-renderer issues on low-end devices).
+          backgroundImage:
+            "radial-gradient(120% 80% at 50% -20%, color-mix(in srgb, var(--accent, #7C8CF8) 22%, transparent), transparent 60%)",
+        }}
+      >
         <button
           type="button"
           aria-label="Закрыть"
@@ -78,7 +82,7 @@ export function WelcomeModal() {
             id="welcome-title"
             className="mt-4 text-2xl font-semibold tracking-tight text-white"
           >
-            Привет 👋
+            Привет
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-white/70">
             Это демо{" "}
@@ -102,7 +106,7 @@ export function WelcomeModal() {
               Попробовать демо-персонажа
             </Link>
             <Button variant="outline" onClick={close} className="sm:flex-1">
-              Осмотреться самому
+              Осмотреться
             </Button>
           </div>
         </div>

@@ -20,14 +20,14 @@ describe("readiness", () => {
   });
 
   it("heroic readiness is high at the ilvl threshold + full progress, low far below with none", () => {
-    // At threshold: eq=606 (heroicReadyIlvl), 8/8 heroic -> 100*0.6 + 100*0.4 = 100
+    // At threshold: eq=255 (heroicReadyIlvl), 8/8 heroic -> 100*0.6 + 100*0.4 = 100
     const atThreshold = makeCharacter({
-      itemLevel: { equipped: 606, total: 606 },
+      itemLevel: { equipped: 255, total: 255 },
       currentRaid: makeRaid({ heroicKilled: 8, summary: "8/8 H" }),
     });
-    // Far below: eq=560 (>band under target), 0 progress -> 0*0.6 + 0*0.4 = 0
+    // Far below: eq=220 (a full band under target), 0 progress -> 0*0.6 + 0*0.4 = 0
     const farBelow = makeCharacter({
-      itemLevel: { equipped: 560, total: 560 },
+      itemLevel: { equipped: 220, total: 220 },
       currentRaid: makeRaid({ heroicKilled: 0 }),
     });
 
@@ -39,14 +39,14 @@ describe("readiness", () => {
   });
 
   it("mythic readiness is high at the ilvl threshold + full progress, low far below with none", () => {
-    // At threshold: eq=619 (mythicReadyIlvl), 8/8 mythic -> 100*0.6 + 100*0.4 = 100
+    // At threshold: eq=278 (mythicReadyIlvl), 8/8 mythic -> 100*0.6 + 100*0.4 = 100
     const atThreshold = makeCharacter({
-      itemLevel: { equipped: 619, total: 619 },
+      itemLevel: { equipped: 278, total: 278 },
       currentRaid: makeRaid({ mythicKilled: 8, summary: "8/8 M" }),
     });
-    // Far below: eq=560, 0 mythic kills -> 0
+    // Far below: eq=220, 0 mythic kills -> 0
     const farBelow = makeCharacter({
-      itemLevel: { equipped: 560, total: 560 },
+      itemLevel: { equipped: 220, total: 220 },
       currentRaid: makeRaid({ mythicKilled: 0 }),
     });
 
@@ -59,10 +59,10 @@ describe("readiness", () => {
 
   it("zeroes the progress component when there is no raid", () => {
     // High ilvl, but no raid -> the progress half of heroic/mythic must be 0.
-    // eq=639 -> ilvlReadiness saturates to 100 for both targets.
+    // eq=290 -> ilvlReadiness saturates to 100 for both targets.
     // heroic = 100*0.6 + 0*0.4 = 60 ; mythic = 100*0.6 + 0*0.4 = 60.
     const c = makeCharacter({
-      itemLevel: { equipped: 639, total: 639 },
+      itemLevel: { equipped: 290, total: 290 },
       currentRaid: null,
     });
     const r = readiness(c);
